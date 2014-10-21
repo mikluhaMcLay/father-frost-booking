@@ -39,6 +39,7 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
+        mavenRepo 'http://repo.spring.io/milestone'
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
@@ -59,7 +60,8 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.7'
         compile ":asset-pipeline:1.9.6"
         compile ":jetty:3.0.0"
-        compile ":spring-security-core:2.0-RC4"
+
+
 
         // plugins needed at runtime but not for compilation
         runtime ":jquery:1.11.1"
