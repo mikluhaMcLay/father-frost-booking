@@ -3,12 +3,13 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>The Firm - One Page Scroller Template</title>
+		<title>True frost — вызов деда мороза на дом</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+        <asset:stylesheet src="bootstrap.min.css"/>
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="styles.css"/>
         <asset:javascript src="application.js"/>
@@ -30,8 +31,7 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="item active">
-            <link rel="architecture" href="${assetPath(src: 'architecture.jpg')}">
+        <div class="item active"><img src="${assetPath(src: 'architecture.jpg')}">
           <div class="container">
             <div class="carousel-caption">
               <h2>Architectural Design</h2>
@@ -39,8 +39,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
-            <link rel="interior" href="${assetPath(src: 'interior.jpg')}">
+        <div class="item"><img src="${assetPath(src: 'interior.jpg')}">
           <div class="container">
             <div class="carousel-caption">
               <h2>Interior Design</h2>
@@ -48,8 +47,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
-            <link rel="renovation" href="${assetPath(src: 'renovation.jpg')}">
+        <div class="item"><img src="${assetPath(src: 'renovation.jpg')}">
           <div class="container">
             <div class="carousel-caption">
               <h2>Renovations &amp; Adaptive Re-use</h2>
@@ -58,7 +56,7 @@
           </div>
         </div>       
       </div><!-- /.carousel-inner -->
-      <div class="logo">The Firm</div> 
+      <div class="logo">True frost</div>
       <!-- Controls -->
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -268,23 +266,23 @@
         <h1>Contact Us</h1>        
         </div>
         <div class="col-xs-4">
-          <input type="text" class="form-control" id="firstName" name="name" placeholder="Your Name">
+            <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
         </div>
         <div class="col-xs-6">
-          <input type="text" class="form-control" id="organization" name="organization" placeholder="Company or Organization">
+            <input type="text" class="form-control" id="children-ages" name="ages" placeholder="Возраст детей( через пробел )">
         </div>
       </div>
       <div class="row form-group">
           <div class="col-xs-5">
-          <input type="text" class="form-control" name="email" placeholder="Email">
+            <input type="text" class="form-control" name="email" placeholder="Email">
           </div>
           <div class="col-xs-5">
-          <input type="text" class="form-control" name="phone" placeholder="Phone">
+            <input type="text" class="form-control" name="phone" placeholder="Телефон">
           </div>
       </div>
       <div class="row form-group">
           <div class="col-xs-10">
-            <textarea class="form-control" placeholder="Comments"></textarea>
+            <textarea class="form-control" placeholder="Комментарий"></textarea>
           </div>
       </div>
       <div class="row form-group">
@@ -301,7 +299,7 @@
 
 <div id="footer">
   <div class="container">
-    <p class="text-muted">Copyright ©2014 ACME, Inc.</p>
+    <p class="text-muted">Copyright ©2014 True frost</p>
   </div>
 </div>
 
