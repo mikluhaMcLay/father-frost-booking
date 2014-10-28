@@ -34,6 +34,8 @@
         <div class="item active"><img src="${assetPath(src: 'architecture.jpg')}">
           <div class="container">
             <div class="carousel-caption">
+                <embed width="622" height="350"
+                       src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="true">
               <h2>Architectural Design</h2>
               <p></p>
             </div>
@@ -82,7 +84,7 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav nav-justified">
-          <li><a href="#section1">Home</a></li>
+          <li><a href="#section1">Мы</a></li>
           <li><a href="#section2">Profile</a></li>
           <li class="dropdown">
             <a href="#section3" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
@@ -263,7 +265,7 @@
       
       <div class="row form-group">
         <div class="col-md-12">
-        <h1>Contact Us</h1>        
+        <h1>Отправить заказ</h1>
         </div>
         <div class="col-xs-4">
             <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
@@ -287,7 +289,7 @@
       </div>
       <div class="row form-group">
           <div class="col-xs-10">
-            <button class="btn btn-default pull-right">Contact Us</button>
+            <button class="btn btn-default pull-right">Отправить заказ</button>
           </div>
       </div>
     
