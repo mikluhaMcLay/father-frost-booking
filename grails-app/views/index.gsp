@@ -12,7 +12,11 @@
         <asset:stylesheet src="bootstrap.min.css"/>
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="styles.css"/>
+        <asset:stylesheet src="dhtmlxscheduler.css"/>
+
         <asset:javascript src="application.js"/>
+        <asset:javascript src="dhtmlxscheduler.js"/>
+        <asset:javascript src="locale_ru.js" charset="utf-8"/>
 	</head>
 	<body>
 <!-- Wrap all page content here -->
@@ -254,6 +258,16 @@
   <div class="col-md-8 col-md-offset-1">
   </div>
 </div>
+
+    <div id="scheduler_here" class="dhx_cal_container" style='width:1000px; height:600px;  padding:0px;'>
+        <div class="dhx_cal_navline">
+            <div class="dhx_cal_prev_button">&nbsp;</div>
+            <div class="dhx_cal_next_button">&nbsp;</div>
+            <div class="dhx_cal_date"></div>
+        </div>
+        <div class="dhx_cal_header"></div>
+        <div class="dhx_cal_data" style="padding:0px; margin: 0px; "></div>
+    </div>
   
 <div class="divider" id="section5"></div>
 
@@ -298,6 +312,8 @@
 </div><!--/row-->
   
 </div><!--/wrap-->
+
+
 
 <div id="footer">
   <div class="container">
