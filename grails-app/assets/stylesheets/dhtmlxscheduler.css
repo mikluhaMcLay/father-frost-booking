@@ -1604,14 +1604,14 @@ input.dhx_repeat_checkbox {
 	display: none;
 }
 
-.dhx_cal_event .dhx_footer {
+.dhx_cal_event  {
 	height: 5px;
 	border: 0;
-	margin-top: -6px;
+	/*margin-top: -6px;*/
 	background: url(imgs_dhx_terrace/resizing.png) no-repeat center center;
 }
 
-.dhx_cal_event .dhx_header, .dhx_cal_event .dhx_footer, .dhx_cal_event .dhx_body, .dhx_cal_event .dhx_title {
+.dhx_cal_event .dhx_header, .dhx_cal_event , .dhx_cal_event .dhx_body, .dhx_cal_event .dhx_title {
 	background-color: #1796b0;
 	border-color: transparent;
 	color: white;
@@ -2238,4 +2238,19 @@ div.dhx_menu_head, div.dhx_menu_icon {
 }
 .dhx_mini_calendar  .dhx_cal_next_button{
 	top:8px !important;
+}
+
+.dhx_footer{
+	/*display: none;*/
+}
+
+.dhx_scale_holder {
+	padding: 0px;
+	margin: 0px;
+
+}
+
+.dhx_scale_holder .dhx_call_event .dhx_body{
+	text-align: center;
+	vertical-align: middle;
 }
