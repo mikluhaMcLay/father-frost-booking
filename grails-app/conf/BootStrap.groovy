@@ -1,4 +1,5 @@
 import grails.converters.JSON
+import org.bson.types.ObjectId
 import org.ffbooking.Price
 
 import java.text.SimpleDateFormat
@@ -27,8 +28,82 @@ class BootStrap {
                 price: 6000
         ).save()
 
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/26 10' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/28 22' ),
+                price: 4000
+        ).save()
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/25 10' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/25 22' ),
+                price: 4000
+        ).save()
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/29 10' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/29 22' ),
+                price: 6500
+        ).save()
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/30 10' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/30 22' ),
+                price: 6500
+        ).save()
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 08' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 15' ),
+                price: 6500
+        ).save()
+
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 15' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 17' ),
+                price: 6700
+        ).save()
+
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 17' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 19' ),
+                price: 7000
+        ).save()
+
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 19' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 21' ),
+                price: 8000
+        ).save()
+
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 21' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 22' ),
+                price: 8500
+        ).save()
+
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 22' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 23' ),
+                price: 9400
+        ).save()
+
+
+        new Price(
+                from: Date.parse( DATE_FORMAT, '2014/12/31 23' ),
+                to: Date.parse( DATE_FORMAT, '2014/12/31 24' ),
+                price: 10000
+        ).save()
+
+
         JSON.registerObjectMarshaller( Price ) {
             def map = [ : ]
+            map[ 'id' ] = (( ObjectId ) it.id).toHexString()
             map[ 'start_date' ] = dateFormatter.format( it.from )
             map[ 'end_date' ] = dateFormatter.format( it.to )
             map[ 'text' ] = it.price as String
@@ -36,5 +111,12 @@ class BootStrap {
         }
     }
     def destroy = {
+    }
+
+
+    def color( price ) {
+        switch ( price ){
+            case 4000: return 0x0FBBDF
+        }
     }
 }

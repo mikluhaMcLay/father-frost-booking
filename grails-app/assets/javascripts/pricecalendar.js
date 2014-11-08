@@ -8,6 +8,7 @@ $(document).ready(function () {
             initScheduler(result);
         },
         error: function (xhr, status, error) {
+            debugger;
             console.log('error: ' + error);
         }
     });
@@ -21,6 +22,9 @@ var initScheduler = function (data) {
     scheduler.date.week_start = function (date) {
         return date;
     };
+    scheduler.attachEvent('onClick', function (id, e) {
+        console.log('clicked event: id = ' + id + ' native event = ' + e);
+    });
     scheduler.init('scheduler_here', new Date(2014, 11, 26), "week");
     scheduler.parse(data, 'json');
 }

@@ -89,19 +89,10 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav nav-justified">
           <li><a href="#section1">Мы</a></li>
-          <li><a href="#section2">Profile</a></li>
-          <li class="dropdown">
-            <a href="#section3" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Academic</a></li>
-              <li><a href="#">Commercial</a></li>
-              <li><a href="#">Financial</a></li>
-              <li><a href="#">Interior Design</a></li>
-              <li><a href="#">Medical</a></li>
-              <li><a href="#">Religious</a></li>
-            </ul>
-          </li>
-          <li><a href="#section4">Contact</a></li>
+          <li><a href="#section2">Программы</a></li>
+          <li><a href="#section3">фотки</a></li>
+          <li><a href="#section4">цены</a></li>
+          <li><a href="#section5">контакты</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
@@ -113,12 +104,12 @@
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
-      <h1>Since 1923</h1>
+      <h1>True frost</h1>
     </div>
     
-    <p class="lead text-center"> 
-      The Firm has been providing Professional Design Services in the England area since 1923.
-    </p> 
+    <p class="lead text-center">
+        Тут мы скажем, какие мы хорошие ребята, почему стоит заказывать у нас и все такое.
+    </p>
     
     <hr>
     
@@ -137,23 +128,20 @@
    
 <div class="row">
   	<div class="col-sm-10 col-sm-offset-1">
-      <h1>Profile</h1>
+      <h1>Программы</h1>
       
       <hr>
      
       <p>
-	  The Firm has had a great deal of experience and is highly regarded for its expertise in the areas of design, construction administration, construction management, tight cost control and scheduling.
+          Расскажем, какие у нас есть программы
 	  </p> 
       <p>
-	  We have been involved in a wide range of building projects, including college facilities, banks, schools, nursing homes, office buildings, churches, industrial buildings and major urban development projects.
-      </p> 
+          какой у анс индивидуальный подход к детям
+      </p>
       <p>
-	  The various projects have included new construction, renovation and adaptive re-use as a way of providing new space for the various clients. Tessier Associates provides in-house programming, master planning, architectural design, construction documentation, project administration and interior design services. Sustainable design, as appropriate for each client, is incorporated in cost effective ways to benefit the long term value of the buildings created by the firm.
-	  </p> 
-      <p>
-	  Together with selected consultants, The Firm provides complete professional services including landscape architecture, structural engineering, electrical and mechanical engineering and site planning.
-	  </p> 
-      
+          ну и прочая херня
+	  </p>
+
       <hr>
       
       <div class="divider"></div>
@@ -289,9 +277,6 @@
         </div>
       </div>
       <div class="row form-group">
-          <div class="col-xs-5">
-            <input type="text" class="form-control" name="email" placeholder="Email">
-          </div>
           <div class="col-xs-5">
             <input type="text" class="form-control" name="phone" placeholder="Телефон">
           </div>
