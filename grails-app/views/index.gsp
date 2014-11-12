@@ -25,6 +25,29 @@
  
 <header class="masthead">
 
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav nav-justified">
+                    <li><a href="#section1">Мы</a></li>
+                    <li><a href="#section2">Программы</a></li>
+                    <li><a href="#section3">фотки</a></li>
+                    <li><a href="#section4">цены</a></li>
+                    <li><a href="#section5">контакты</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+    </div><!--/.navbar -->
+
   	<!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
@@ -75,28 +98,7 @@
   
 </header>
   
-  
-<!-- Fixed navbar -->
-<div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav nav-justified">
-          <li><a href="#section1">Мы</a></li>
-          <li><a href="#section2">Программы</a></li>
-          <li><a href="#section3">фотки</a></li>
-          <li><a href="#section4">цены</a></li>
-          <li><a href="#section5">контакты</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div><!--/.container -->
-</div><!--/.navbar -->
+
   
 <!-- Begin page content -->
 <div class="divider" id="section1"></div>
@@ -269,31 +271,33 @@
         <div class="col-md-12">
         <h1>Отправить заказ</h1>
         </div>
-        <div class="col-xs-4">
-            <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
-        </div>
         <div class="col-xs-6">
-            <input type="text" class="form-control" id="children-ages" name="ages" placeholder="Возраст детей( через пробел )">
+            <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
         </div>
       </div>
       <div class="row form-group">
-          <div class="col-xs-5">
-            <input type="text" class="form-control" name="phone" placeholder="Телефон">
+          <div class="col-xs-6">
+              <input type="text" class="form-control" name="phone" placeholder="Телефон">
           </div>
       </div>
       <div class="row form-group">
-          <div class="col-xs-10">
+          <div class="col-xs-6">
+              <input type="text" class="form-control" id="children-ages" name="ages" placeholder="Возраст детей (через пробел)">
+          </div>
+      </div>
+      <div class="row form-group">
+          <div class="col-xs-6">
             <textarea class="form-control" placeholder="Комментарий"></textarea>
           </div>
       </div>
       <div class="row form-group">
           <div class="col-xs-10">
-            <button class="btn btn-default pull-right">Отправить заказ</button>
+            <button class="btn btn-default pull-left">Отправить заказ</button>
           </div>
       </div>
     
   </div>
-  
+
 </div><!--/row-->
   
 </div><!--/wrap-->
