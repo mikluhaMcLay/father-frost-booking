@@ -12,17 +12,16 @@
         <asset:stylesheet src="bootstrap.min.css"/>
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="styles.css"/>
-        <asset:stylesheet src="dhtmlxscheduler.css"/>
+        <asset:stylesheet src="bootstrap-table.min.css"/>
 
         <asset:javascript src="application.js"/>
-        <asset:javascript src="dhtmlxscheduler.js"/>
-        <asset:javascript src="locale_ru.js" charset="utf-8"/>
+        <asset:javascript src="bootstrap-table.min.js"/>
 	</head>
 	<body>
 <!-- Wrap all page content here -->
 <div id="wrap">
 
- 
+
 <header class="masthead">
 
 
@@ -83,7 +82,7 @@
               <p></p>
             </div>
           </div>
-        </div>       
+        </div>
       </div><!-- /.carousel-inner -->
       <div class="logo">True frost</div>
       <!-- Controls -->
@@ -92,51 +91,51 @@
       </a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
-      </a>  
+      </a>
     </div>
     <!-- /.carousel -->
-  
-</header>
-  
 
-  
+</header>
+
+
+
 <!-- Begin page content -->
 <div class="divider" id="section1"></div>
-  
+
 <div class="container">
   <div class="col-sm-10 col-sm-offset-1">
     <div class="page-header text-center">
       <h1>True frost</h1>
     </div>
-    
+
     <p class="lead text-center">
         Тут мы скажем, какие мы хорошие ребята, почему стоит заказывать у нас и все такое.
     </p>
-    
+
     <hr>
-    
+
     <div class="divider"></div>
-    
+
   </div>
 </div>
-    
+
 <div class="divider"></div>
-  
+
 <section class="bg-1">
   <div class="col-sm-6 col-sm-offset-3 text-center"></div>
 </section>
-  
+
 <div class="divider" id="section2"></div>
-   
+
 <div class="row">
   	<div class="col-sm-10 col-sm-offset-1">
       <h1>Программы</h1>
-      
+
       <hr>
-     
+
       <p>
           Расскажем, какие у нас есть программы
-	  </p> 
+	  </p>
       <p>
           какой у анс индивидуальный подход к детям
       </p>
@@ -145,25 +144,25 @@
 	  </p>
 
       <hr>
-      
+
       <div class="divider"></div>
-      
+
   	</div><!--/col-->
 </div><!--/container-->
 
 <div class="divider"></div>
-  
+
 <section class="bg-3">
   <div class="col-sm-6 col-sm-offset-3 text-center"><h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Clients &amp; Partners</h2></div>
 </section>
-  
+
 <div class="divider" id="section3"></div>
-  
+
 <div class="bg-4">
   <div class="container">
 	<div class="row">
 	   <div class="col-sm-4 col-xs-6">
-      
+
         <div class="panel panel-default">
           <div class="panel-thumbnail"><a href="#" title="Renovations"><img src="//placehold.it/600x400/444/F8F8F8" class="img-responsive"></a></div>
           <div class="panel-body">
@@ -173,71 +172,71 @@
           </div>
         </div><!--/panel-->
       </div><!--/col-->
-      
+
       <div class="col-sm-4 col-xs-6">
-      
+
       	<div class="panel panel-default">
           <div class="panel-thumbnail"><a href="#" title="Academic Institutions"><img src="//placehold.it/600x400/454545/FFF" class="img-responsive"></a></div>
           <div class="panel-body">
             <p>Academic Institutions</p>
             <p></p>
-            
+
           </div>
-        </div><!--/panel--> 
+        </div><!--/panel-->
       </div><!--/col-->
-      
+
       <div class="col-sm-4 col-xs-6">
-      
+
       	<div class="panel panel-default">
           <div class="panel-thumbnail"><a href="#" title="Interiors"><img src="//placehold.it/600x400/555/F2F2F2" class="img-responsive"></a></div>
           <div class="panel-body">
             <p>Interiors</p>
             <p></p>
-            
-          </div>
-        </div><!--/panel--> 
 
-      </div><!--/col--> 
-      
+          </div>
+        </div><!--/panel-->
+
+      </div><!--/col-->
+
       <div class="col-sm-4 col-xs-6">
-      
+
       	<div class="panel panel-default">
           <div class="panel-thumbnail"><a href="#" title="New Construction"><img src="//placehold.it/600x400/555/FFF" class="img-responsive"></a></div>
           <div class="panel-body">
             <p>New Construction</p>
             <p></p>
-            
-          </div>
-        </div><!--/panel--> 
 
-      </div><!--/col--> 
-      
+          </div>
+        </div><!--/panel-->
+
+      </div><!--/col-->
+
       <div class="col-sm-4 col-xs-6">
-      
+
       	<div class="panel panel-default">
           <div class="panel-thumbnail"><a href="#" title="Site Planning"><img src="//placehold.it/600x400/555/EEE" class="img-responsive"></a></div>
           <div class="panel-body">
             <p>Site Planning</p>
             <p></p>
-            
-          </div>
-        </div><!--/panel--> 
 
-      </div><!--/col--> 
-      
+          </div>
+        </div><!--/panel-->
+
+      </div><!--/col-->
+
       <div class="col-sm-4 col-xs-6">
-      
+
       	<div class="panel panel-default">
           <div class="panel-thumbnail"><a href="#" title="Churches"><img src="//placehold.it/600x400/666/F4F4F4" class="img-responsive"></a></div>
           <div class="panel-body">
             <p>Churches</p>
             <p></p>
-            
-          </div>
-        </div><!--/panel--> 
 
-      </div><!--/col--> 
-      
+          </div>
+        </div><!--/panel-->
+
+      </div><!--/col-->
+
 	</div><!--/row-->
   </div><!--/container-->
 </div>
@@ -246,27 +245,26 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
+      <table id="pricestable" data-url="/father-frost-booking/prices" data-height="299" data-click-to-select="true" data-select-item-name="radioName"  data-show-header="false">
+          <thead>
+          <tr>
+              <th data-field="state" data-radio="true"></th>
+              <th data-field="interval" data-align="center">Время</th>
+              <th data-field="price" data-align="left">Цена</th>
+          </tr>
+          </thead>
+      </table>
   </div>
 </div>
 
-    <div id="scheduler_here" class="dhx_cal_container" style='width:1000px; height:600px;  padding:0px;'>
-        <div class="dhx_cal_navline">
-            <div class="dhx_cal_prev_button">&nbsp;</div>
-            <div class="dhx_cal_next_button">&nbsp;</div>
-            <div class="dhx_cal_date"></div>
-        </div>
-        <div class="dhx_cal_header"></div>
-        <div class="dhx_cal_data" style="padding:0px; margin: 0px; "></div>
-    </div>
-  
 <div class="divider" id="section5"></div>
 
 <div class="row">
-  
+
   <hr>
-  
+
   <div class="col-sm-9 col-sm-offset-1">
-      
+
       <div class="row form-group">
         <div class="col-md-12">
         <h1>Отправить заказ</h1>
@@ -295,11 +293,11 @@
             <button class="btn btn-default pull-left">Отправить заказ</button>
           </div>
       </div>
-    
+
   </div>
 
 </div><!--/row-->
-  
+
 </div><!--/wrap-->
 
 
@@ -324,14 +322,14 @@
 	</div>
 	<div class="modal-body">
 		<div id="modalCarousel" class="carousel">
- 
+
           <div class="carousel-inner">
-           
+
           </div>
-          
+
           <a class="carousel-control left" href="#modaCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
           <a class="carousel-control right" href="#modalCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-          
+
         </div>
 	</div>
 	<div class="modal-footer">
@@ -345,6 +343,5 @@
 	<!-- script references -->
 
     <asset:javascript src="scripts.js"/>
-    %{--<asset:javascript src="bootstrap.min.js"/>--}%
 	</body>
 </html>

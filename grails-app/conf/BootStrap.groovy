@@ -1,5 +1,4 @@
 import grails.converters.JSON
-import org.bson.types.ObjectId
 import org.ffbooking.Price
 
 import java.text.SimpleDateFormat
@@ -8,7 +7,7 @@ class BootStrap {
 
     def init = { servletContext ->
         def DATE_FORMAT = 'yyyy/MM/dd HH'
-        def dateFormatter = new SimpleDateFormat( DATE_FORMAT )
+        def dateFormatter = new SimpleDateFormat( 'MM/dd HH' )
 
         try {
             new Price(
@@ -107,10 +106,8 @@ class BootStrap {
 
         JSON.registerObjectMarshaller( Price ) {
             def map = [ : ]
-            map[ 'id' ] = (( ObjectId ) it.id).toHexString()
-            map[ 'start_date' ] = dateFormatter.format( it.from )
-            map[ 'end_date' ] = dateFormatter.format( it.to )
-            map[ 'text' ] = it.price as String
+            map[ 'interval' ] = dateFormatter.format( it.from ) + dateFormatter.format( it.to )
+            map[ 'price' ] = it.price
             return map
         }
     }

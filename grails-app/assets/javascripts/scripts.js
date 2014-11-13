@@ -61,4 +61,9 @@ $('.panel-thumbnail>a').click(function(e){
   	return false;
 });
 
+//    load prices
+$('#pricestable').bootstrapTable({
+    url: '/father-frost-booking/prices'
+});
+
 });
