@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
@@ -13,9 +13,11 @@
         <asset:stylesheet src="application.css"/>
         <asset:stylesheet src="styles.css"/>
         <asset:stylesheet src="bootstrap-table.min.css"/>
+        <asset:stylesheet src="jquery.timepicker.min.css"/>
 
         <asset:javascript src="application.js"/>
         <asset:javascript src="bootstrap-table.min.js"/>
+        <asset:javascript src="jquery.timepicker.min.js"/>
 	</head>
 	<body>
 <!-- Wrap all page content here -->
@@ -245,7 +247,9 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-1">
-      <table id="pricestable" data-url="/father-frost-booking/prices" data-height="299" data-click-to-select="true" data-select-item-name="radioName"  data-show-header="false">
+      <h1>Цены</h1>
+     <div class="col-sm-4 col-xs-6">
+         <table id="pricestable" data-url="/father-frost-booking/prices" data-click-to-select="true" data-select-item-name="radioName"  data-show-header="false">
           <thead>
           <tr>
               <th data-field="state" data-radio="true"></th>
@@ -253,7 +257,12 @@
               <th data-field="price" data-align="left">Цена</th>
           </tr>
           </thead>
-      </table>
+        </table>
+         <input id="order-timepicker" >
+
+         </input>
+
+     </div>
   </div>
 </div>
 
@@ -269,10 +278,15 @@
         <div class="col-md-12">
         <h1>Отправить заказ</h1>
         </div>
-        <div class="col-xs-6">
-            <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
-        </div>
+
+          <div  class="col-xs-6">
+              <p id="order-description"></p>
+          </div>
+
       </div>
+          <div class="row form-group"><div class="col-xs-6">
+            <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
+        </div></div>
       <div class="row form-group">
           <div class="col-xs-6">
               <input type="text" class="form-control" name="phone" placeholder="Телефон">

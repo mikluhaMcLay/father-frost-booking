@@ -66,4 +66,7 @@ $('#pricestable').bootstrapTable({
     url: '/father-frost-booking/prices'
 });
 
+    $('#order-timepicker').timepicker({
+        timeFormat: 'HH:mm'
+    });
 });
