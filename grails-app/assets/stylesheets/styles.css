@@ -241,3 +241,34 @@ section {
 	min-height:270px;
     max-height:270px;
 }
+
+.price-picker div{
+    /*padding: 1px;*/
+}
+
+#pricestable{
+    padding: 1px;
+}
+
+.price-picker .time {
+    padding-left: 0px;
+}
+
+/*.price-picker .time{*/
+    /*height: 200px;*/
+/*}*/
+
+.time{
+    height: 500px;
+}
+
+.xdsoft_timepicker{
+}
+
+.xdsoft_time_box{
+    /*height: inherit;*/
+}
+
+/*.xdsoft_scroller_box{*/
+    /*height: 100%;*/
+/*}*/

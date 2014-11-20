@@ -13,11 +13,15 @@
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="styles.css"/>
     <asset:stylesheet src="bootstrap-table.min.css"/>
-    <asset:stylesheet src="jquery.timepicker.min.css"/>
+    %{--<asset:stylesheet src="jquery.timepicker.min.css"/>--}%
+    %{--<asset:stylesheet src="bootstrap-timepicker.min.css"/>--}%
+    <asset:stylesheet src="jquery.datetimepicker.css"/>
 
     <asset:javascript src="application.js"/>
     <asset:javascript src="bootstrap-table.min.js"/>
-    <asset:javascript src="jquery.timepicker.min.js"/>
+    %{--<asset:javascript src="jquery.timepicker.min.js"/>--}%
+    %{--<asset:javascript src="bootstrap-timepicker.min.js"/>--}%
+    <asset:javascript src="jquery.datetimepicker.js"/>
 </head>
 
 <body>
@@ -64,8 +68,8 @@
 
                     <div class="container">
                         <div class="carousel-caption">
-                            <embed width="622" height="350"
-                                   src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="true">
+                            <iframe width="622" height="350"
+                                   src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="1" frameborder="0"></iframe>
                                 <h2>Architectural Design</h2>
 
                                 <p></p>
@@ -279,8 +283,9 @@
         <div class="col-md-8 col-md-offset-1">
             <h1>Цены</h1>
 
-            <div class="col-sm-4 col-xs-6">
-                <table id="pricestable" data-url="/father-frost-booking/prices" data-click-to-select="true"
+            %{--<div class="col-sm-4 col-xs-6">--}%
+          <div class="row price-picker">
+            <div class="col-xs-8"><table id="pricestable" data-url="/father-frost-booking/prices" data-click-to-select="true"
                        data-select-item-name="radioName" data-show-header="false">
                     <thead>
                     <tr>
@@ -289,12 +294,16 @@
                         <th data-field="price" data-align="left">Цена</th>
                     </tr>
                     </thead>
-                </table>
-                <input id="order-timepicker">
-
-            </input>
-
+                </table></div>
+                %{--<input id="order-timepicker">--}%
+        <div class="col-xs-4 time">
+                <input  id="datetimepicker" type="text" >
             </div>
+        </div>
+
+
+
+            %{--</div>--}%
         </div>
     </div>
 
@@ -317,32 +326,40 @@
 
             </div>
 
-            <div class="row form-group"><div class="col-xs-6">
-                <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
-            </div></div>
-
             <div class="row form-group">
                 <div class="col-xs-6">
-                    <input type="text" class="form-control" name="phone" placeholder="Телефон">
+                    <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-xs-6">
-                    <input type="text" class="form-control" id="children-ages" name="ages"
-                           placeholder="Возраст детей (через пробел)">
+                    <input type="tel" required="" class="form-control" name="phone" placeholder="Телефон">
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-xs-6">
-                    <textarea class="form-control" placeholder="Комментарий"></textarea>
+                    <input type="text" required="" class="form-control" name="address" placeholder="Адрес">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-xs-6">
+                    <input type="text" class="form-control" name="ages"
+                           placeholder="Возраст детей">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-xs-6">
+                    <textarea class="form-control" name="comment" placeholder="Комментарий"></textarea>
                 </div>
             </div>
 
             <div class="row form-group">
                 <div class="col-xs-10">
-                    <button class="btn btn-default pull-left">Отправить заказ</button>
+                    <button id="send-order" class="btn btn-default pull-left">Отправить заказ</button>
                 </div>
             </div>
 

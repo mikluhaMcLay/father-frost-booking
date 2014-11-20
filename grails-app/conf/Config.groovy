@@ -114,3 +114,6 @@ log4j.main = {
 
     debug 'grails.app'
 }
+
+
+grails.databinding.dateFormats = ["dd.MM.yyyy hh:mm a"]
