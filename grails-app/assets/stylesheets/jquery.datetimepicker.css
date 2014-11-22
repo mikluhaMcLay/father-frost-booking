@@ -1,10 +1,10 @@
 .xdsoft_datetimepicker{
 	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.506);
 	background: #FFFFFF;
-	border-bottom: 1px solid #BBBBBB;
-	border-left: 1px solid #CCCCCC;
-	border-right: 1px solid #CCCCCC;
-	border-top: 1px solid #CCCCCC;
+	/*border-bottom: 1px solid #BBBBBB;*/
+	/*border-left: 1px solid #CCCCCC;*/
+	/*border-right: 1px solid #CCCCCC;*/
+	/*border-top: 1px solid #CCCCCC;*/
 	color: #333333;
 	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	padding: 8px;
@@ -415,4 +415,12 @@ position:relative;
 }
 .xdsoft_dark .xdsoft_scrollbar >.xdsoft_scroller{
 	background:#333 !important;
+}
+
+.xdsoft_time_box, .xdsoft_scroller_box {
+	position: relative;
+	height: 327px;
+	overflow: scroll;
+	/*padding-top: 30px;*/
+	/*padding-bottom: 30px;*/
 }
