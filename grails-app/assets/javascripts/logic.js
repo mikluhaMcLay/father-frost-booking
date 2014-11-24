@@ -1,16 +1,28 @@
 $(document).ready(function(){
+    var isTimesShown = false;
+
+    var timeBox;    //хуйня с часами и минутами (часть timepicker)
+    var timepicker; //весь DateTimePicker
+
     //    load prices
     var pricetable = $('#pricestable');
     pricetable.bootstrapTable({
         url: '/father-frost-booking/prices',
         onClickRow: function (row) {
-            var timeBox = $('.xdsoft_time_box');
-            timeBox.height(pricetable.height() - 45);
-            timeBox.show();
-            $('.xdsoft_prev, .xdsoft_next').show();
+            checkTimes(row);
+            //showTimes();
         }
     });
 
+    //function showTimes(){
+    //    if (!isTimesShown) {
+    //        timeBox.height(pricetable.height() - 45);
+    //        timeBox.show();
+    //        $('.xdsoft_prev, .xdsoft_next').show();
+    //
+    //        isTimesShown = true;
+    //    }
+    //}
     function checkTimes(rowDay){
         $.ajax('/father-frost-booking/order/times',{
             type: 'GET',
@@ -18,7 +30,13 @@ $(document).ready(function(){
                 interval: 'test'
             },
             success: function(data, textStatus, jqXHR){
-                console.log('times: ' + data.times)
+                //var response = jQuery.parseJSON(data);
+                //console.log('times: ' + response.times)
+                var times = ["08:00", "10:30", "12:00", "17:30"]
+
+                createTimePicker(times);
+
+                $('.xdsoft_time_box').height( pricetable.height() - 45 );
             },
             error: function(code){
                 console.log('error.code: ' + code)
@@ -26,25 +44,29 @@ $(document).ready(function(){
         })
     }
 
-    jQuery('#datetimepicker').datetimepicker({
-        datepicker:false,
-        format:'H:i',
-        inline:true,
-        lang:'ru',
-        style:'height:372px;'
-    });
+    function createTimePicker(allowTimes){
+        jQuery('#datetimepicker').datetimepicker({
+            datepicker:false,
+            format:'H:i',
+            inline:true,
+            lang:'ru',
+            style:'height:372px;',
+            allowTimes: allowTimes
+        });
+    }
 
-    $('.xdsoft_prev, .xdsoft_next').hide();
-    $('.xdsoft_time_box').hide();
+    //$('.xdsoft_prev, .xdsoft_next').hide();
+    //$('.xdsoft_time_box').hide();
+    //timeBox = $('.xdsoft_time_box');
 
-    timepicker.timepicker().on('changeTime.timepicker', function (e) {
-        var dateAndPrice = getDateAndPrice();
-        var text = 'Какой-то, блять, текст про заказ на ' + dateAndPrice.datetime +
-            '. Стоимость заказа ' + dateAndPrice.price;
-
-
-        $('#order-description').text(text);
-    });
+    //timepicker.timepicker().on('changeTime.timepicker', function (e) {
+    //    var dateAndPrice = getDateAndPrice();
+    //    var text = 'Какой-то, блять, текст про заказ на ' + dateAndPrice.datetime +
+    //        '. Стоимость заказа ' + dateAndPrice.price;
+    //
+    //
+    //    $('#order-description').text(text);
+    //});
 
     i=0;
 
