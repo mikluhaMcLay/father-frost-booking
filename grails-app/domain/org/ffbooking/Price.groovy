@@ -12,4 +12,8 @@ class Price {
 
     static constraints = {
     }
+
+    static mapping = {
+        sort: 'from'
+    }
 }

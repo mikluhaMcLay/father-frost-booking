@@ -1,8 +1,5 @@
 package org.ffbooking
-
-import grails.rest.Resource
-
-@Resource( uri = '/order', formats = [ 'json' ] )
+//@Resource( uri = '/order', formats = [ 'json' ] )
 class Order {
     String name
     String phone

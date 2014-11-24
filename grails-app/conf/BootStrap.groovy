@@ -1,13 +1,15 @@
 import grails.converters.JSON
 import org.ffbooking.Price
 
-import java.text.DateFormat
+import java.text.SimpleDateFormat
 
 class BootStrap {
 
     def init = { servletContext ->
         def DATE_FORMAT = 'yyyy/MM/dd HH'
-        def dateFormatter = DateFormat.getDateInstance( DateFormat.MEDIUM, new Locale( 'ru', 'RU' ) )
+//        def dateFormatter = DateFormat.getDateInstance( DateFormat.MEDIUM, new Locale( 'ru', 'RU' ) )
+        def dayFormat = new SimpleDateFormat( 'dd.MM' )
+        def hourFormat = new SimpleDateFormat( 'HH' )
 
         try {
             new Price(
@@ -106,17 +108,11 @@ class BootStrap {
 
         JSON.registerObjectMarshaller( Price ) {
             def map = [ : ]
-            map[ 'interval' ] = "${dateFormatter.format( it.from )} — ${dateFormatter.format( it.to )}"
+            map[ 'interval' ] = "${dayFormat.format( it.from )} ${hourFormat.format( it.from )} — ${hourFormat.format( it.to )}"
             map[ 'price' ] = it.price + ' ' + '\u20BD'
             return map
         }
     }
     def destroy = {
-    }
-
-    def color( price ) {
-        switch ( price ){
-            case 4000: return 0x0FBBDF
-        }
     }
 }

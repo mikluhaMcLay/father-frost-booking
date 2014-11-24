@@ -7,8 +7,9 @@ class UrlMappings {
             }
         }
 
-        "/check-day"(controller: "order"){
-            action:[POST:'checkDay']
+        "/order/times" {
+            controller = "order"
+            action = "times"
         }
 
         "/"( view: "/index" )

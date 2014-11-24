@@ -69,10 +69,12 @@
                     <div class="container">
                         <div class="carousel-caption">
                             <iframe width="622" height="350"
-                                   src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="1" frameborder="0"></iframe>
-                                <h2>Architectural Design</h2>
+                                    src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="1"
+                                    frameborder="0"></iframe>
 
-                                <p></p>
+                            <h2>Architectural Design</h2>
+
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -284,9 +286,10 @@
             <h1>Цены</h1>
 
             %{--<div class="col-sm-4 col-xs-6">--}%
-          <div class="row price-picker">
-            <div class="col-xs-8"><table id="pricestable" data-url="/father-frost-booking/prices" data-click-to-select="true"
-                       data-select-item-name="radioName" data-show-header="false">
+            <div class="row price-picker">
+                <div class="col-xs-8"><table id="pricestable" data-url="/father-frost-booking/prices"
+                                             data-click-to-select="true"
+                                             data-select-item-name="radioName" data-show-header="false">
                     <thead>
                     <tr>
                         <th data-field="state" data-radio="true"></th>
@@ -296,10 +299,10 @@
                     </thead>
                 </table></div>
                 %{--<input id="order-timepicker">--}%
-        <div class="col-xs-4 time">
-                <input  id="datetimepicker" type="text" >
+                <div class="col-xs-4 time">
+                    <input id="datetimepicker" type="text">
+                </div>
             </div>
-        </div>
 
 
 
@@ -417,5 +420,6 @@
 <!-- script references -->
 
 <asset:javascript src="scripts.js"/>
+<asset:javascript src="logic.js"/>
 </body>
 </html>
