@@ -27,18 +27,17 @@ $(document).ready(function(){
         $.ajax('/father-frost-booking/order/times',{
             type: 'GET',
             data: {
-                interval: 'test'
+                interval: rowDay.interval
             },
             success: function(data, textStatus, jqXHR){
-                //var response = jQuery.parseJSON(data);
-                //console.log('times: ' + response.times)
-                var times = ["08:00", "10:30", "12:00", "17:30"]
+                console.log("times = " + data.times);
 
-                createTimePicker(times);
+                createTimePicker(data.times);
 
                 $('.xdsoft_time_box').height( pricetable.height() - 45 );
             },
             error: function(code){
+                debugger;
                 console.log('error.code: ' + code)
             }
         })
