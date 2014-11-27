@@ -1,8 +1,11 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var isTimesShown = false;
 
     var timeBox;    //хуйня с часами и минутами (часть timepicker)
     var timepicker; //весь DateTimePicker
+
+    //скроем для начала инпут с таймпикером
+    $('#datetimepicker').hide();
 
     //    load prices
     var pricetable = $('#pricestable');
@@ -14,62 +17,76 @@ $(document).ready(function(){
         }
     });
 
-    //function showTimes(){
-    //    if (!isTimesShown) {
-    //        timeBox.height(pricetable.height() - 45);
-    //        timeBox.show();
-    //        $('.xdsoft_prev, .xdsoft_next').show();
-    //
-    //        isTimesShown = true;
-    //    }
-    //}
-    function checkTimes(rowDay){
-        $.ajax('/father-frost-booking/order/times',{
+    function checkTimes(rowDay) {
+        $.ajax('/father-frost-booking/order/times', {
             type: 'GET',
             data: {
                 interval: rowDay.interval
             },
-            success: function(data, textStatus, jqXHR){
+            success: function (data, textStatus, jqXHR) {
                 console.log("times = " + data.times);
 
                 createTimePicker(data.times);
 
-                $('.xdsoft_time_box').height( pricetable.height() - 45 );
+                $('.xdsoft_time_box').height(pricetable.height() - 45);
             },
-            error: function(code){
+            error: function (code) {
                 debugger;
                 console.log('error.code: ' + code)
             }
         })
     }
 
-    function createTimePicker(allowTimes){
+    function createTimePicker(allowTimes) {
+        if (!$('#datetimepicker').is(":visible")) {
+            $('#datetimepicker').show();
+        }
+
         jQuery('#datetimepicker').datetimepicker({
-            datepicker:false,
-            format:'H:i',
-            inline:true,
-            lang:'ru',
-            style:'height:372px;',
-            allowTimes: allowTimes
+            datepicker: false,
+            format: 'H:i',
+            inline: true,
+            lang: 'ru',
+            style: 'height:372px;',
+            allowTimes: allowTimes,
+            step: 30,
+            onChangeDateTime: function (dp, $input) {
+                var text;
+                if ($input.val()) {
+                    var dateAndPrice = getDateAndPrice();
+                    text = 'Какой-то, блять, текст про заказ на ' + dateAndPrice.datetime +
+                    '. Стоимость заказа ' + dateAndPrice.price;
+                } else {
+                    text = 'Чтобы оформить заказ самостоятельно, Вам нужно выбрать дату и время.';
+                }
+                $('#order-description').text(text);
+            }
         });
     }
 
-    //$('.xdsoft_prev, .xdsoft_next').hide();
-    //$('.xdsoft_time_box').hide();
-    //timeBox = $('.xdsoft_time_box');
 
-    //timepicker.timepicker().on('changeTime.timepicker', function (e) {
-    //    var dateAndPrice = getDateAndPrice();
-    //    var text = 'Какой-то, блять, текст про заказ на ' + dateAndPrice.datetime +
-    //        '. Стоимость заказа ' + dateAndPrice.price;
-    //
-    //
-    //    $('#order-description').text(text);
-    //});
+    var preorderMessage = function () {
+        return {
+            text: 'Чтобы оформить заказ самостоятельно, Вам нужно выбрать дату и время.',
+            next: orderDescriptionMessage
+        };
+    }();
+
+    var orderDescriptionMessage = function (dateTime, price) {
+        return {
+            text: 'Какой-то, блять, текст про заказ на ' + dateTime + '. Стоимость заказа ' + price,
+            next: preorderMessage
+        };
+    }();
 
     i=0;
 
-    $('#send-order').click(function(){
+    $('#send-order').click(function (evt) {
+        debugger;
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.stopImmediatePropagation();
+
         var dateAndPrice = getDateAndPrice();
         var name = nameInput.val();
         var phone = phoneInput.val();
@@ -78,8 +95,9 @@ $(document).ready(function(){
         var comment = commentInput.val();
         var price = dateAndPrice.price.split(' ')[0];
         i++;
-        console.log(i);
-        $.post('/father-frost-booking/order',{
+        console.log('i='+i);
+
+        $.post('/father-frost-booking/order', {
             name: name,
             phone: phone,
             address: address,
@@ -88,6 +106,8 @@ $(document).ready(function(){
             bookDate: dateAndPrice.datetime,
             price: price
         })
+
+        return false;
     });
 
     var nameInput = $('input[name=name]');
@@ -96,7 +116,8 @@ $(document).ready(function(){
     var agesInput = $('input[name=ages]');
     var commentInput = $('textarea[name=comment]');
 
-    function getDateAndPrice(){
+    function getDateAndPrice() {
+        var timepicker = $('#datetimepicker');
         var time = timepicker.val();
 
         var selected = pricetable.bootstrapTable('getSelections');
