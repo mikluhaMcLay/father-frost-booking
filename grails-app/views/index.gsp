@@ -22,6 +22,12 @@
     %{--<asset:javascript src="jquery.timepicker.min.js"/>--}%
     %{--<asset:javascript src="bootstrap-timepicker.min.js"/>--}%
     <asset:javascript src="jquery.datetimepicker.js"/>
+
+    <style type="text/css">
+    BODY {
+        background: url(http://cdn.computerhope.com/computer-hope.jpg) no-repeat;
+    }
+    </style>
 </head>
 
 <body>
@@ -64,7 +70,8 @@
             </ol>
 
             <div class="carousel-inner">
-                <div class="item active"><img src="${assetPath( src: 'architecture.jpg' )}">
+                <div class="item active">
+                    <img src="${assetPath( src: 'architecture.jpg' )}">
 
                     <div class="container">
                         <div class="carousel-caption">
@@ -79,7 +86,8 @@
                     </div>
                 </div>
 
-                <div class="item"><img src="${assetPath( src: 'interior.jpg' )}">
+                <div class="item">
+                    <img src="${assetPath( src: 'interior.jpg' )}">
 
                     <div class="container">
                         <div class="carousel-caption">
@@ -145,7 +153,7 @@
     <div class="divider" id="section2"></div>
 
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
+        <div class="col-sm-10 col-sm-offset-1 text-center">
             <h1>Программы</h1>
 
             <hr>
@@ -155,7 +163,7 @@
             </p>
 
             <p>
-                какой у анс индивидуальный подход к детям
+                какой у нас индивидуальный подход к детям
             </p>
 
             <p>
@@ -282,24 +290,28 @@
     <div class="divider" id="section4"></div>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-2 text-center">
             <h1>Цены</h1>
 
             %{--<div class="col-sm-4 col-xs-6">--}%
             <div class="row price-picker">
-                <div class="col-xs-8"><table id="pricestable" data-url="/father-frost-booking/prices"
-                                             data-click-to-select="true"
-                                             data-select-item-name="radioName" data-show-header="false">
-                    <thead>
-                    <tr>
-                        <th data-field="state" data-radio="true"></th>
-                        <th data-field="interval" data-align="center">Время</th>
-                        <th data-field="price" data-align="left">Цена</th>
-                    </tr>
-                    </thead>
-                </table></div>
+                <div class="col-xs-10 col-md-8 col-lg-8 col-md-offset-1">
+                    <table id="pricestable"
+                           data-url="/father-frost-booking/prices"
+                           data-click-to-select="true"
+                           data-select-item-name="radioName"
+                           data-show-header="false">
+                        <thead>
+                        <tr>
+                            <th style="max-width: 15px;" data-field="state" data-align="center" data-radio="true"></th>
+                            <th data-field="interval" data-align="center">Время</th>
+                            <th data-field="price" data-align="center">Цена</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
                 %{--<input id="order-timepicker">--}%
-                <div class="col-xs-4 time">
+                <div class="col-xs-1 time">
                     <input id="datetimepicker" type="text">
                 </div>
             </div>
@@ -316,57 +328,97 @@
 
         <hr>
 
-        <div class="col-sm-9 col-sm-offset-1">
+        <div id="self-order-div"><div class="col-sm-9 col-sm-offset-1">
 
-            <div class="row form-group">
+            <div class="row form-group text-center">
                 <div class="col-md-12">
                     <h1>Отправить заказ</h1>
                 </div>
-
-                <div class="col-xs-6">
-                    <p id="order-description"></p>
-                </div>
-
             </div>
 
-            <div class="row form-group">
-                <div class="col-xs-6">
-                    <input type="text" class="form-control" id="firstName" name="name" placeholder="Ваши имя и фамилия">
+            <div class="col-md-offset-4">
+                <div class="order-input row">
+                    <p class="col-md-6" id="order-description"></p>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <input type="text" class="form-control" id="firstName" name="name"
+                               placeholder="Ваши имя и фамилия" required="required" data-bv-notempty="true">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <input type="tel" required="" class="form-control" name="phone" placeholder="Телефон">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <input type="text" required="" class="form-control" name="address" placeholder="Адрес">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <input type="text" class="form-control" name="ages"
+                               placeholder="Возраст детей">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <textarea class="form-control" name="comment" placeholder="Комментарий"></textarea>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-10 col-md-offset-3">
+                        <button id="send-order" class="btn btn-default pull-left">Отправить заказ</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="row form-group">
-                <div class="col-xs-6">
-                    <input type="tel" required="" class="form-control" name="phone" placeholder="Телефон">
+        </div></div>
+
+        %{--раздел с обратным звонком--}%
+        <div id="back-call-div"><div class="col-sm-9 col-sm-offset-1">
+
+            <div class="row form-group text-center">
+                <div class="col-md-12">
+                    <h1>Обратный звонок</h1>
                 </div>
             </div>
 
-            <div class="row form-group">
-                <div class="col-xs-6">
-                    <input type="text" required="" class="form-control" name="address" placeholder="Адрес">
+            <div class="col-md-offset-4">
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <input type="text" class="form-control" id="firstName1" name="name"
+                               placeholder="Ваши имя и фамилия">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <input type="tel" required="" class="form-control" name="phone" placeholder="Телефон">
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-xs-6 order-input">
+                        <textarea class="form-control" name="comment" placeholder="Комментарий"></textarea>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-10 col-md-offset-3">
+                        <button id="send-order1" class="btn btn-default pull-left">Обратный звонок</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="row form-group">
-                <div class="col-xs-6">
-                    <input type="text" class="form-control" name="ages"
-                           placeholder="Возраст детей">
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-xs-6">
-                    <textarea class="form-control" name="comment" placeholder="Комментарий"></textarea>
-                </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col-xs-10">
-                    <button id="send-order" class="btn btn-default pull-left">Отправить заказ</button>
-                </div>
-            </div>
-
-        </div>
+        </div></div>
 
     </div><!--/row-->
 
@@ -384,6 +436,24 @@
     <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
 </ul>
 
+<div class="modal" id="order-result" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">×</button>
+
+                <h3 class="modal-title"></h3>
+            </div>
+
+            <div class="modal-body">
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal" id="myModal" role="dialog">
     <div class="modal-dialog">

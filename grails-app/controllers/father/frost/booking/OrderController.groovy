@@ -10,17 +10,32 @@ import java.text.SimpleDateFormat
 class OrderController extends RestfulController {
     static responseFormats = [ 'json' ]
 
+    def dateFormat = new SimpleDateFormat( 'dd.MM HH:mm' )
+
+
     OrderController() {
         super( Order )
     }
 
-    def index() {
-        render Order.list( sort: 'from', order: 'asc' ) as JSON
-    }
+    def save() {
+        def orderParams = params
+        def bookDate = dateFormat.parse( params.bookDate )
+        if ( bookDate.month == 0 ) {
+            bookDate.year = 115;//year 2015
+        } else {
+            bookDate.year = 114;//year 2014
+        }
 
-    def show(){
-        def interval = params.interval
-        respond ('interval': interval)
+        log.debug "bookDate: ${ bookDate }"
+        orderParams.bookDate = bookDate
+
+        def order = new Order( orderParams )
+        log.debug "Order: ${ order }"
+
+        def saved = order.save()
+        log.info "Order saved: ${ saved }"
+
+        render( success: true ) as JSON
     }
 
     def times() {
@@ -31,13 +46,12 @@ class OrderController extends RestfulController {
         log.debug "splited: ${ splited }"
 
         def hourTo = splited[ 1 ].trim()
-        def hourFrom = splited[ 0 ].split( ' ' )[ 1 ].trim()
+        def hourFrom = splited[ 0 ].split( ' ' )[ 2 ].trim()
 
-        def dateInputPattern = 'HH'
         def dateFormat = new SimpleDateFormat( 'HH:mm' )
 
-        def dateFrom = Date.parse( dateInputPattern, hourFrom )
-        def dateTo = Date.parse( dateInputPattern, hourTo )
+        def dateFrom = dateFormat.parse( hourFrom )
+        def dateTo = dateFormat.parse( hourTo )
 
         def currentDate = dateFrom
 
@@ -49,14 +63,14 @@ class OrderController extends RestfulController {
             }
         }
 
-        render  new TimesResponse( times: times ) as JSON
+        render new TimesResponse( times: times ) as JSON
     }
 
-    class TimesResponse{
+    class TimesResponse {
         static {
-            grails.converters.JSON.registerObjectMarshaller(TimesResponse) {
+            grails.converters.JSON.registerObjectMarshaller( TimesResponse ) {
                 // you can filter here the key-value pairs to output:
-                return it.properties.findAll {k,v -> k == 'times'}
+                return it.properties.findAll { k, v -> k == 'times' }
             }
 
         }

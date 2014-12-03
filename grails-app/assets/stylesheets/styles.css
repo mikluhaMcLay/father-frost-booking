@@ -8,6 +8,9 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+body{
+    background: url('http://www.joomlaworks.net/images/demos/galleries/abstract/4.jpg') no-repeat;
+}
 .row {
   margin-left:0px;
   margin-right:0px;
@@ -209,7 +212,7 @@ section {
 }
 
 .bg-1 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -217,7 +220,7 @@ section {
 }
 
 .bg-2 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -225,7 +228,7 @@ section {
 }
 
 .bg-3 {
-	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed; 
+	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -269,6 +272,19 @@ section {
     /*height: inherit;*/
 }
 
-/*.xdsoft_scroller_box{*/
-    /*height: 100%;*/
-/*}*/
+.order-input{
+    min-width: 300px;
+    /*width: 80%;*/
+}
+
+#self-order-div, #back-call-div {
+
+}
+
+td.bs-checkbox{
+    margin: 0;
+}
+
+BODY {
+    background: url(http://cdn.computerhope.com/computer-hope.jpg) no-repeat;
+}

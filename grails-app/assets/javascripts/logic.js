@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    //if ($(document).width() > 768) {//768 — меньшая сторона iPad
+    //    $("#self-order-div, #back-call-div").addClass("col-xs-6");
+    //}
+
     var isTimesShown = false;
 
     var timeBox;    //хуйня с часами и минутами (часть timepicker)
@@ -10,7 +14,7 @@ $(document).ready(function () {
     //    load prices
     var pricetable = $('#pricestable');
     pricetable.bootstrapTable({
-        url: '/father-frost-booking/prices',
+        url: '/father-frost-booking/price',
         onClickRow: function (row) {
             checkTimes(row);
             //showTimes();
@@ -54,8 +58,9 @@ $(document).ready(function () {
                 var text;
                 if ($input.val()) {
                     var dateAndPrice = getDateAndPrice();
-                    text = 'Какой-то, блять, текст про заказ на ' + dateAndPrice.datetime +
+                    text = 'Какой-то текст про заказ на ' + dateAndPrice.datetime +
                     '. Стоимость заказа ' + dateAndPrice.price;
+                    window.location = "#section5";
                 } else {
                     text = 'Чтобы оформить заказ самостоятельно, Вам нужно выбрать дату и время.';
                 }
@@ -82,7 +87,6 @@ $(document).ready(function () {
     i=0;
 
     $('#send-order').click(function (evt) {
-        debugger;
         evt.stopPropagation();
         evt.preventDefault();
         evt.stopImmediatePropagation();
@@ -97,7 +101,7 @@ $(document).ready(function () {
         i++;
         console.log('i='+i);
 
-        $.post('/father-frost-booking/order', {
+        $.post('/father-frost-booking/order/save', {
             name: name,
             phone: phone,
             address: address,
@@ -122,7 +126,8 @@ $(document).ready(function () {
 
         var selected = pricetable.bootstrapTable('getSelections');
         selected = selected[0];
-        var date = selected.interval.split(' ')[0];
+        var splitted = selected.interval.split(' ');
+        var date = splitted[0] + ' ' + splitted[1];
         var price = selected.price;
 
         return {
