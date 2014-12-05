@@ -13,15 +13,18 @@
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="styles.css"/>
     <asset:stylesheet src="bootstrap-table.min.css"/>
+    %{--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">--}%
     %{--<asset:stylesheet src="jquery.timepicker.min.css"/>--}%
     %{--<asset:stylesheet src="bootstrap-timepicker.min.css"/>--}%
     <asset:stylesheet src="jquery.datetimepicker.css"/>
+    %{--<asset:stylesheet src="shb.css"/>--}%
 
     <asset:javascript src="application.js"/>
     <asset:javascript src="bootstrap-table.min.js"/>
     %{--<asset:javascript src="jquery.timepicker.min.js"/>--}%
     %{--<asset:javascript src="bootstrap-timepicker.min.js"/>--}%
     <asset:javascript src="jquery.datetimepicker.js"/>
+    %{--<asset:javascript src="shb.min.js"/>--}%
 
     <style type="text/css">
     BODY {
@@ -53,7 +56,8 @@
                         <li><a href="#section2">Программы</a></li>
                         <li><a href="#section3">фотки</a></li>
                         <li><a href="#section4">цены</a></li>
-                        <li><a href="#section5">контакты</a></li>
+                        <li><a href="#section4">заказать</a></li>
+                        <li><a href="#section6">контакты</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container -->
@@ -293,6 +297,11 @@
         <div class="col-md-8 col-md-offset-2 text-center">
             <h1>Цены</h1>
 
+            <div class="row text-center">
+                <p class="col-md-6 col-md-offset-1">
+                    Чтобы сделать заказ, выберите подходящие дату и время
+                </p>
+            </div>
             %{--<div class="col-sm-4 col-xs-6">--}%
             <div class="row price-picker">
                 <div class="col-xs-10 col-md-8 col-lg-8 col-md-offset-1">
@@ -382,7 +391,15 @@
 
         </div></div>
 
-        %{--раздел с обратным звонком--}%
+    </div><!--/row-->
+
+    %{--раздел с обратным звонком--}%
+    <div class="divider" id="section6"></div>
+
+    <div class="row">
+
+        <hr>
+
         <div id="back-call-div"><div class="col-sm-9 col-sm-offset-1">
 
             <div class="row form-group text-center">
@@ -418,9 +435,30 @@
                 </div>
             </div>
 
-        </div></div>
+        </div>
+        </div>
+    </div>
 
-    </div><!--/row-->
+
+    %{--<div class="container">--}%
+        %{--facebook--}%
+        %{--<div class="row">--}%
+            %{--<div class="btn-group col-sm-9 col-sm-offset-1 col-md-offset-4" id="shb">--}%
+                %{--<a class="btn btn-default"--}%
+                                      %{--href="http://vk.com/share.php?url=http://localhost:8080/father-frost-booking&title=_TITLE_&description=_DESCRIPTION_&image=${assetPath( src: 'preview-blue.jpg' )}">--}%
+                %{--<i class="fa fa-vk fa-lg vk"></i>--}%
+            %{--</a>--}%
+                %{--<a class="btn btn-default"--}%
+                   %{--href="http://www.facebook.com/sharer.php?u=http://localhost:8080/father-frost-booking&t=_ADDITIONAL_TEXT_">--}%
+                    %{--<i class="fa fa-thumbs-o-up fa-lg fb"></i>--}%
+                %{--</a>--}%
+                %{--<a class="btn btn-default"--}%
+                   %{--href="http://twitter.com/share?url=http://localhost:8080/father-frost-booking&text=_ADDITIONAL_TEXT_&via=TWITTER_NAME">--}%
+                    %{--<i class="fa fa-twitter fa-lg tw"></i>--}%
+                %{--</a>--}%
+            %{--</div>--}%
+        %{--</div>--}%
+    %{--</div>--}%
 
 </div><!--/wrap-->
 
