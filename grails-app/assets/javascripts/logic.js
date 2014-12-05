@@ -1,13 +1,4 @@
 $(document).ready(function () {
-    //if ($(document).width() > 768) {//768 — меньшая сторона iPad
-    //    $("#self-order-div, #back-call-div").addClass("col-xs-6");
-    //}
-
-    var isTimesShown = false;
-
-    var timeBox;    //хуйня с часами и минутами (часть timepicker)
-    var timepicker; //весь DateTimePicker
-
     //скроем для начала инпут с таймпикером
     $('#datetimepicker').hide();
 
