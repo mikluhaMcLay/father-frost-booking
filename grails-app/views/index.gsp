@@ -42,7 +42,7 @@
                     <ul class="nav navbar-nav nav-justified">
                         <li><a href="#section1">Мы</a></li>
                         <li><a href="#section2">Программы</a></li>
-                        <li><a href="#section3">фотки</a></li>
+                        %{--<li><a href="#section3">фотки</a></li>--}%
                         <li><a href="#section4">цены</a></li>
                         <li><a href="#section4">заказать</a></li>
                         <li><a href="#section6">контакты</a></li>
@@ -51,87 +51,139 @@
             </div><!--/.container -->
         </div><!--/.navbar -->
 
+    <div class="container" style="position:inherit;height: 285px;width: 100%">
+        <img src="${assetPath( src: 'DedMorozExists-white.png' )}" class="our-logo"
+             style="max-width: 285px; max-height: 285px">
+        <div class="col-sm-10 col-sm-offset-1">
+
+        </div>
+
+    </div>
+
+        <div class="divider"></div>
+        <div class="container">
+            <div class="our-text col-sm-10 col-sm-offset-1" style="height: 100%;">
+                <p class="lead text-center" style="text-shadow: 0 1px 2px rgba(0,0,0,0.6); font-size: 30px">
+                    Закажите новогодний праздник для своего ребенка!
+                </p>
+                <p class="lead text-center" >
+                    Привет, мы компания «Дед Мороз существует», и для нас это не просто название.
+                </p>
+
+                <p class="lead text-center">
+                    Мы твердо убеждены, что новогодние чудеса случаются до тех пор, пока наши дети в них верят.
+                </p>
+
+                <p class="lead text-center" style="font-style: italic; line-weight:1.4">
+                    А каким запомнит этот новый год ваш ребенок?
+                </p>
+
+            </div>
+
+
+        </div>
     <!-- Carousel
     ================================================== -->
-        <div id="myCarousel" class="carousel slide">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+        %{--<div id="myCarousel" class="carousel slide">--}%
+            %{--<!-- Indicators -->--}%
+            %{--<ol class="carousel-indicators">--}%
+                %{--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>--}%
+                %{--<li data-target="#myCarousel" data-slide-to="1"></li>--}%
+                %{--<li data-target="#myCarousel" data-slide-to="2"></li>--}%
+            %{--</ol>--}%
 
-            <div class="carousel-inner">
-                <div class="item active">
-                    %{--<img src="${assetPath( src: 'architecture.jpg' )}">--}%
+            %{--<div class="carousel-inner">--}%
+                %{--<div class="item active">--}%
 
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h2>Interior Design</h2>
+                    %{--<div class="container vertical-center" style="height: 100%;">--}%
+                        %{--<div class="our-text col-sm-10 col-sm-offset-1" style="height: 100%;">--}%
+                            %{--<p class="lead text-center" style="font-weight: 800;font-size: 28px;">--}%
+                                %{--Закажите новогодний праздник для своего ребенка!--}%
+                            %{--</p>--}%
 
-                            <p></p>
-                        </div>
-                    </div>
+                            %{--<p class="lead text-center" >--}%
+                                %{--Привет, мы компания «Дед Мороз существует», и для нас это не просто название.--}%
+                            %{--</p>--}%
 
-                </div>
+                            %{--<p class="lead text-center">--}%
+                                %{--Мы твердо убеждены, что новогодние чудеса случаются до тех пор, пока наши дети в них верят.--}%
+                            %{--</p>--}%
 
-                <div class="item">
-                    <img src="${assetPath( src: 'interior.jpg' )}">
+                            %{--<p class="lead text-center" style="font-style: italic;">--}%
+                                %{--А каким запомнит этот новый год ваш ребенок?--}%
+                            %{--</p>--}%
 
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <iframe width="622" height="350"
-                                    src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="1"
-                                    frameborder="0"></iframe>
+                        %{--</div>--}%
 
-                            <h2>Architectural Design</h2>
+                        %{--<div class="carousel-caption">--}%
+                            %{--<h2>Interior Design</h2>--}%
 
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
+                            %{--<p></p>--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
 
-                <div class="item">
+                %{--</div>--}%
+
+                %{--<div class="item">--}%
+                    %{--<img src="${assetPath( src: 'interior.jpg' )}">--}%
+
+                    %{--<div class="container">--}%
+                        %{--<div class="carousel-caption">--}%
+                            %{--<iframe width="622" height="350"--}%
+                                    %{--src="http://www.youtube.com/v/7zXn57WT4sQ" allowFullScreen="1"--}%
+                                    %{--frameborder="0"></iframe>--}%
+
+                            %{--<h2>Architectural Design</h2>--}%
+
+                            %{--<p></p>--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
+                %{--</div>--}%
+
+                %{--<div class="item">--}%
                     %{--<img src="${assetPath( src: 'renovation.jpg' )}">--}%
 
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h2>Renovations &amp; Adaptive Re-use</h2>
+                    %{--<div class="container">--}%
+                        %{--<div class="carousel-caption">--}%
+                            %{--<h2>Renovations &amp; Adaptive Re-use</h2>--}%
 
-                            <p></p>
-                        </div>
-                </div>
-                </div>
-            </div><!-- /.carousel-inner -->
-        <div class="logo">
-            <img src="${assetPath( src: 'preview-blue.jpg' )}">
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
+                            %{--<p></p>--}%
+                        %{--</div>--}%
+                    %{--</div>--}%
+                %{--</div>--}%
+            %{--</div><!-- /.carousel-inner -->--}%
+            %{--<div class="logo">--}%
+            %{--</div>--}%
+            %{--<!-- Controls -->--}%
+            %{--<a class="left carousel-control" href="#myCarousel" data-slide="prev">--}%
+                %{--<span class="glyphicon glyphicon-chevron-left"></span>--}%
+            %{--</a>--}%
+            %{--<a class="right carousel-control" href="#myCarousel" data-slide="next">--}%
+                %{--<span class="glyphicon glyphicon-chevron-right"></span>--}%
+            %{--</a>--}%
+        %{--</div>--}%
         <!-- /.carousel -->
 
     </header>
 
-
+    <div class="divider"></div>
 
     <!-- Begin page content -->
     <div class="divider" id="section1"></div>
 
     <div class="container">
-        <div class="col-sm-10 col-sm-offset-1">
+        <div class="col-sm-10 col-sm-offset-1 our-text">
             <div class="page-header text-center">
-                <h1>True frost</h1>
+                <h1>Почему мы?</h1>
             </div>
 
-            <p class="lead text-center">
-                Тут мы скажем, какие мы хорошие ребята, почему стоит заказывать у нас и все такое.
-            </p>
+            <p style="font-weight: 500; font-size:24px;">А теперь давайте без лишней лирики - только факты:</p>
+            <ul>
+                <li>Большая команда актеров с опытом работы</li>
+                <li>Новые качественные костюмы</li>
+                <li>Проработанная программа</li>
+                <li>Мы хотим стать самым крутым сервисом настроения в Москве, и нам действительно важно качество предоставляемых услуг</li>
+            </ul>
 
             <hr>
 
@@ -149,7 +201,7 @@
     <div class="divider" id="section2"></div>
 
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 text-center">
+        <div class="col-sm-10 col-sm-offset-1 text-center our-text">
             <h1>Программы</h1>
 
             <hr>
@@ -176,117 +228,118 @@
     <div class="divider"></div>
 
     <section class="bg-3">
-        <div class="col-sm-6 col-sm-offset-3 text-center"><h2
-                style="padding:20px;background-color:rgba(5,5,5,.8)">Clients &amp; Partners</h2></div>
+        %{--<div class="col-sm-6 col-sm-offset-3 text-center"><h2--}%
+                %{--style="padding:20px;background-color:rgba(5,5,5,.8)">Clients &amp; Partners</h2>--}%
+        %{--</div>--}%
     </section>
 
-    <div class="divider" id="section3"></div>
+    %{--<div class="divider" id="section3"></div>--}%
 
-    <div class="bg-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-xs-6">
+    %{--<div class="bg-4">--}%
+        %{--<div class="container">--}%
+            %{--<div class="row">--}%
+                %{--<div class="col-sm-4 col-xs-6">--}%
 
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail"><a href="#" title="Renovations"><img
-                                src="//placehold.it/600x400/444/F8F8F8" class="img-responsive"></a></div>
+                    %{--<div class="panel panel-default">--}%
+                        %{--<div class="panel-thumbnail"><a href="#" title="Renovations"><img--}%
+                                %{--src="//placehold.it/600x400/444/F8F8F8" class="img-responsive"></a></div>--}%
 
-                        <div class="panel-body">
-                            <p>Renovations</p>
+                        %{--<div class="panel-body">--}%
+                            %{--<p>Renovations</p>--}%
 
-                            <p></p>
+                            %{--<p></p>--}%
 
-                        </div>
-                    </div><!--/panel-->
-                </div><!--/col-->
+                        %{--</div>--}%
+                    %{--</div><!--/panel-->--}%
+                %{--</div><!--/col-->--}%
 
-                <div class="col-sm-4 col-xs-6">
+                %{--<div class="col-sm-4 col-xs-6">--}%
 
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail"><a href="#" title="Academic Institutions"><img
-                                src="//placehold.it/600x400/454545/FFF" class="img-responsive"></a></div>
+                    %{--<div class="panel panel-default">--}%
+                        %{--<div class="panel-thumbnail"><a href="#" title="Academic Institutions"><img--}%
+                                %{--src="//placehold.it/600x400/454545/FFF" class="img-responsive"></a></div>--}%
 
-                        <div class="panel-body">
-                            <p>Academic Institutions</p>
+                        %{--<div class="panel-body">--}%
+                            %{--<p>Academic Institutions</p>--}%
 
-                            <p></p>
+                            %{--<p></p>--}%
 
-                        </div>
-                    </div><!--/panel-->
-                </div><!--/col-->
+                        %{--</div>--}%
+                    %{--</div><!--/panel-->--}%
+                %{--</div><!--/col-->--}%
 
-                <div class="col-sm-4 col-xs-6">
+                %{--<div class="col-sm-4 col-xs-6">--}%
 
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail"><a href="#" title="Interiors"><img
-                                src="//placehold.it/600x400/555/F2F2F2" class="img-responsive"></a></div>
+                    %{--<div class="panel panel-default">--}%
+                        %{--<div class="panel-thumbnail"><a href="#" title="Interiors"><img--}%
+                                %{--src="//placehold.it/600x400/555/F2F2F2" class="img-responsive"></a></div>--}%
 
-                        <div class="panel-body">
-                            <p>Interiors</p>
+                        %{--<div class="panel-body">--}%
+                            %{--<p>Interiors</p>--}%
 
-                            <p></p>
+                            %{--<p></p>--}%
 
-                        </div>
-                    </div><!--/panel-->
+                        %{--</div>--}%
+                    %{--</div><!--/panel-->--}%
 
-                </div><!--/col-->
+                %{--</div><!--/col-->--}%
 
-                <div class="col-sm-4 col-xs-6">
+                %{--<div class="col-sm-4 col-xs-6">--}%
 
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail"><a href="#" title="New Construction"><img
-                                src="//placehold.it/600x400/555/FFF" class="img-responsive"></a></div>
+                    %{--<div class="panel panel-default">--}%
+                        %{--<div class="panel-thumbnail"><a href="#" title="New Construction"><img--}%
+                                %{--src="//placehold.it/600x400/555/FFF" class="img-responsive"></a></div>--}%
 
-                        <div class="panel-body">
-                            <p>New Construction</p>
+                        %{--<div class="panel-body">--}%
+                            %{--<p>New Construction</p>--}%
 
-                            <p></p>
+                            %{--<p></p>--}%
 
-                        </div>
-                    </div><!--/panel-->
+                        %{--</div>--}%
+                    %{--</div><!--/panel-->--}%
 
-                </div><!--/col-->
+                %{--</div><!--/col-->--}%
 
-                <div class="col-sm-4 col-xs-6">
+                %{--<div class="col-sm-4 col-xs-6">--}%
 
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail"><a href="#" title="Site Planning"><img
-                                src="//placehold.it/600x400/555/EEE" class="img-responsive"></a></div>
+                    %{--<div class="panel panel-default">--}%
+                        %{--<div class="panel-thumbnail"><a href="#" title="Site Planning"><img--}%
+                                %{--src="//placehold.it/600x400/555/EEE" class="img-responsive"></a></div>--}%
 
-                        <div class="panel-body">
-                            <p>Site Planning</p>
+                        %{--<div class="panel-body">--}%
+                            %{--<p>Site Planning</p>--}%
 
-                            <p></p>
+                            %{--<p></p>--}%
 
-                        </div>
-                    </div><!--/panel-->
+                        %{--</div>--}%
+                    %{--</div><!--/panel-->--}%
 
-                </div><!--/col-->
+                %{--</div><!--/col-->--}%
 
-                <div class="col-sm-4 col-xs-6">
+                %{--<div class="col-sm-4 col-xs-6">--}%
 
-                    <div class="panel panel-default">
-                        <div class="panel-thumbnail"><a href="#" title="Churches"><img
-                                src="//placehold.it/600x400/666/F4F4F4" class="img-responsive"></a></div>
+                    %{--<div class="panel panel-default">--}%
+                        %{--<div class="panel-thumbnail"><a href="#" title="Churches"><img--}%
+                                %{--src="//placehold.it/600x400/666/F4F4F4" class="img-responsive"></a></div>--}%
 
-                        <div class="panel-body">
-                            <p>Churches</p>
+                        %{--<div class="panel-body">--}%
+                            %{--<p>Churches</p>--}%
 
-                            <p></p>
+                            %{--<p></p>--}%
 
-                        </div>
-                    </div><!--/panel-->
+                        %{--</div>--}%
+                    %{--</div><!--/panel-->--}%
 
-                </div><!--/col-->
+                %{--</div><!--/col-->--}%
 
-            </div><!--/row-->
-        </div><!--/container-->
-    </div>
+            %{--</div><!--/row-->--}%
+        %{--</div><!--/container-->--}%
+    %{--</div>--}%
 
     <div class="divider" id="section4"></div>
 
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center">
+        <div class="col-md-8 col-md-offset-2 text-center our-text">
             <h1>Цены</h1>
 
             <div class="row text-center">
@@ -329,7 +382,7 @@
 
         <hr>
 
-        <div id="self-order-div"><div class="col-sm-9 col-sm-offset-1">
+        <div id="self-order-div"><div class="col-sm-9 col-sm-offset-1 our-text">
 
             <div class="row form-group text-center">
                 <div class="col-md-12">
@@ -345,7 +398,7 @@
                 <div class="row form-group">
                     <div class="col-xs-6 order-input">
                         <input type="text" class="form-control" id="firstName" name="name"
-                               placeholder="Ваши имя и фамилия" required="required" data-bv-notempty="true">
+                               placeholder="Имя и фамилия" required="required" data-bv-notempty="true">
                     </div>
                 </div>
 
@@ -385,14 +438,14 @@
 
     </div><!--/row-->
 
-    %{--раздел с обратным звонком--}%
+%{--раздел с обратным звонком--}%
     <div class="divider" id="section6"></div>
 
     <div class="row">
 
         <hr>
 
-        <div id="back-call-div"><div class="col-sm-9 col-sm-offset-1">
+        <div id="back-call-div"><div class="col-sm-9 col-sm-offset-1 our-text">
 
             <div class="row form-group text-center">
                 <div class="col-md-12">
