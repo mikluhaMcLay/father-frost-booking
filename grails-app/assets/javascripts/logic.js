@@ -5,7 +5,7 @@ $(document).ready(function () {
     //    load prices
     var pricetable = $('#pricestable');
     pricetable.bootstrapTable({
-        url: '/father-frost-booking/price',
+        url: '/price',
         onClickRow: function (row) {
             checkTimes(row);
             //showTimes();
@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
 
     function checkTimes(rowDay) {
-        $.ajax('/father-frost-booking/order/times', {
+        $.ajax('/order/times', {
             type: 'GET',
             data: {
                 interval: rowDay.interval
@@ -92,7 +92,7 @@ $(document).ready(function () {
         i++;
         console.log('i='+i);
 
-        $.post('/father-frost-booking/order/save', {
+        $.post('/order/save', {
             name: name,
             phone: phone,
             address: address,

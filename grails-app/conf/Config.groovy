@@ -59,6 +59,7 @@ grails {
     }
 }
 
+grails.app.context = "/"
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
@@ -83,15 +84,16 @@ grails.hibernate.cache.queries = false
 // set "singleSession = false" OSIV mode in hibernate configuration after enabling
 grails.hibernate.pass.readonly = false
 // configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
-grails.hibernate.osiv.readonly = false
+grails.hibernate.osiv.readonly = FALSE
 
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.serverURL = "http://localhost:8080/${appName}"
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://дедмороз.москва"
     }
 }
 

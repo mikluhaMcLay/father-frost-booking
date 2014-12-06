@@ -63,7 +63,20 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="${assetPath( src: 'architecture.jpg' )}">
+                    %{--<img src="${assetPath( src: 'architecture.jpg' )}">--}%
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h2>Interior Design</h2>
+
+                            <p></p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <img src="${assetPath( src: 'interior.jpg' )}">
 
                     <div class="container">
                         <div class="carousel-caption">
@@ -79,18 +92,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="${assetPath( src: 'interior.jpg' )}">
-
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h2>Interior Design</h2>
-
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item"><img src="${assetPath( src: 'renovation.jpg' )}">
+                    %{--<img src="${assetPath( src: 'renovation.jpg' )}">--}%
 
                     <div class="container">
                         <div class="carousel-caption">
@@ -98,12 +100,14 @@
 
                             <p></p>
                         </div>
-                    </div>
+                </div>
                 </div>
             </div><!-- /.carousel-inner -->
-            <div class="logo">True frost</div>
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <div class="logo">
+            <img src="${assetPath( src: 'preview-blue.jpg' )}">
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
             <a class="right carousel-control" href="#myCarousel" data-slide="next">
@@ -294,7 +298,7 @@
             <div class="row price-picker">
                 <div class="col-xs-10 col-md-8 col-lg-8 col-md-offset-1">
                     <table id="pricestable"
-                           data-url="/father-frost-booking/prices"
+                           data-url="/prices"
                            data-click-to-select="true"
                            data-select-item-name="radioName"
                            data-show-header="false">

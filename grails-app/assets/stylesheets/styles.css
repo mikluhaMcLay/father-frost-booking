@@ -9,7 +9,11 @@ body {
 }
 
 body{
-    background: url('http://www.joomlaworks.net/images/demos/galleries/abstract/4.jpg') no-repeat;
+    /*background: url('../images/preview-bckgr.jpg') no-repeat center center fixed;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*-o-background-size: cover;*/
+    /*background-size: cover;*/
 }
 .row {
   margin-left:0px;
@@ -60,7 +64,7 @@ body{
 /* Declare heights because of positioning of img element */
 #myCarousel  .item {
   height: 600px;
-  background-color:#bbb;
+  /*background-color:#bbb;*/
 }
 #myCarousel img {
   position: absolute;
@@ -102,13 +106,16 @@ h1 {
 }
 
 .logo {
-  font-size:40px;
-  position:absolute;
-  z-index:1200;
-  color:#333;
-  top:70px;
-  text-align:center;
-  width:100%;
+    font-size: 40px;
+    position: absolute;
+    z-index: 1200;
+    color: #333;
+    top: 0px;
+    left: 50%;
+    text-align: center;
+    width: 100%;
+    max-width: 570px;
+    max-height: 570px;
 }
 
 #nav {
@@ -200,8 +207,8 @@ h1 {
 }
 .scroll-top a:link,.scroll-top a:visited {
   color:#222;
-} 
- 
+}
+
 
 section {
   color: #ffffff;
@@ -283,8 +290,4 @@ section {
 
 td.bs-checkbox{
     margin: 0;
-}
-
-BODY {
-    background: url(http://cdn.computerhope.com/computer-hope.jpg) no-repeat;
 }
