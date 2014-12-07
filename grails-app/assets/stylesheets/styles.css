@@ -1,4 +1,4 @@
-/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 
 html,
 body {
@@ -155,7 +155,7 @@ h1 {
   
 /* customize nav style */
 .navbar-custom {
-    background-color: #2e2e2e;
+    background-color: #073045;
 	font-weight:700;
     text-transform:uppercase;
     border-width:0;
@@ -167,7 +167,7 @@ h1 {
 	color: #eee;
 }
 .navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
-	background-color: #000;
+	background-color: #186387;
 }
 .navbar-custom .navbar-nav>.dropdown>a .caret {
 	border-top-color: #999;
@@ -280,7 +280,9 @@ section {
     height: 500px;
 }
 
-.xdsoft_timepicker{
+.xdsoft_datetimepicker{
+    /*color: #fff;*/
+    background-color: transparent!important;
 }
 
 .xdsoft_time_box{
@@ -305,6 +307,8 @@ td.bs-checkbox{
     font-weight: 500;
     color: #fff;
     text-shadow: 0 1px 2px rgb(0, 0, 0);
+
+
 }
 
 .vertical-center {
@@ -313,4 +317,28 @@ td.bs-checkbox{
 
     display: flex;
     align-items: center;
+}
+
+/*таблица с ценами: выбранная строка*/
+.fixed-table-container tbody .selected td {
+    background-color: #186387;
+}
+/*таблица с ценами: строка при наведении курсора*/
+.table-hover>tbody>tr:hover>td {
+    background-color: #073045;
+}
+
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div{
+    color:#fff;
+    border-top:1px solid #DDDDDD;
+    background: transparent;
+}
+
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div.xdsoft_current{
+    background: #186387;
+}
+
+/*ячейка выбора времени при наведении курсора*/
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div:hover{
+    background:#073045 !important;
 }

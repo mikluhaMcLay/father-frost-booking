@@ -23,7 +23,10 @@ $(document).ready(function () {
 
                 createTimePicker(data.times);
 
-                $('.xdsoft_time_box').height(pricetable.height() - 45);
+                var height = Math.min(data.times.length * 25, pricetable.height() - 45)
+                height = Math.min(height, 495 - 45);
+
+                $('.xdsoft_time_box').height(height);
             },
             error: function (code) {
                 debugger;

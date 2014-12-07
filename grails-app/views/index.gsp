@@ -11,9 +11,9 @@
 		<![endif]-->
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:stylesheet src="application.css"/>
-    <asset:stylesheet src="styles.css"/>
-    <asset:stylesheet src="bootstrap-table.min.css"/>
     <asset:stylesheet src="jquery.datetimepicker.css"/>
+    <asset:stylesheet src="bootstrap-table.min.css"/>
+    <asset:stylesheet src="styles.css"/>
 
     <asset:javascript src="application.js"/>
     <asset:javascript src="bootstrap-table.min.js"/>
@@ -62,12 +62,12 @@
 
         <div class="divider"></div>
         <div class="container">
-            <div class="our-text col-sm-10 col-sm-offset-1" style="height: 100%;">
+            <div class="our-text col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3" style="height: 100%;">
                 <p class="lead text-center" style="text-shadow: 0 1px 2px rgba(0,0,0,0.6); font-size: 30px">
                     Закажите новогодний праздник для своего ребенка!
                 </p>
                 <p class="lead text-center" >
-                    Привет, мы компания «Дед Мороз существует», и для нас это не просто название.
+                    Привет, мы компания «Дед Мороз существует», <br /> и для нас это не просто название.
                 </p>
 
                 <p class="lead text-center">
@@ -172,7 +172,7 @@
     <div class="divider" id="section1"></div>
 
     <div class="container">
-        <div class="col-sm-10 col-sm-offset-1 our-text">
+        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 our-text">
             <div class="page-header text-center">
                 <h1>Почему мы?</h1>
             </div>
@@ -195,13 +195,13 @@
     <div class="divider"></div>
 
     <section class="bg-1">
-        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+        <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 text-center"></div>
     </section>
 
     <div class="divider" id="section2"></div>
 
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 text-center our-text">
+        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 text-center our-text">
             <h1>Программы</h1>
 
             <hr>
@@ -343,7 +343,7 @@
             <h1>Цены</h1>
 
             <div class="row text-center">
-                <p class="col-md-6 col-md-offset-1">
+                <p class="col-xs-10 col-md-8 col-lg-8 col-md-offset-1">
                     Чтобы сделать заказ, выберите подходящие дату и время
                 </p>
             </div>
@@ -354,7 +354,8 @@
                            data-url="/prices"
                            data-click-to-select="true"
                            data-select-item-name="radioName"
-                           data-show-header="false">
+                           data-show-header="false"
+                           data-height="495">
                         <thead>
                         <tr>
                             <th style="max-width: 15px;" data-field="state" data-align="center" data-radio="true"></th>
