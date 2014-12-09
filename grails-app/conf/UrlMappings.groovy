@@ -12,6 +12,11 @@ class UrlMappings {
             action = "times"
         }
 
+        "/order/callback" {
+            controller = "order"
+            action = [POST: "callback"]
+        }
+
         "/"( view: "/index" )
         "500"( view: '/error' )
     }

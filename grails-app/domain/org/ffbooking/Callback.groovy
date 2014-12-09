@@ -1,18 +1,21 @@
 package org.ffbooking
-//@Resource( uri = '/order', formats = [ 'json' ] )
-class Order {
+
+class Callback {
     String name
     String phone
     String address
     String comment
     Date bookDate
-    Integer duration = 1//1 means 0,5 hour
     Integer price
     String childrenAges
+    String bookPeriod
+
     Date bookedAt = new Date()
+    Boolean done = false
 
     static constraints = {
-        comment nullable: true
-        childrenAges nullable: true
+        [ 'address', 'comment', 'bookDate', 'price', 'childrenAges', 'bookPeriod' ].each {
+            "$it" nullable: true
+        }
     }
 }

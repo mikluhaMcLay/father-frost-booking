@@ -3,9 +3,9 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>True frost — вызов деда мороза на дом</title>
+    <title>Дед мороз существует — вызов деда мороза и снегурочки на дом</title>
     <meta name="generator" content="Bootply"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -393,7 +393,9 @@
 
             <div class="col-md-offset-4">
                 <div class="order-input row">
-                    <p class="col-md-6" id="order-description"></p>
+                    <p class="col-md-6" id="order-description">
+                        Чтобы оформить заказ самостоятельно, Вам нужно выбрать дату и время.
+                    </p>
                 </div>
 
                 <div class="row form-group">
@@ -476,7 +478,7 @@
 
                 <div class="row form-group">
                     <div class="col-md-10 col-md-offset-3">
-                        <button id="send-order1" class="btn btn-default pull-left">Обратный звонок</button>
+                        <button id="callback-order" class="btn btn-default pull-left">Обратный звонок</button>
                     </div>
                 </div>
             </div>
@@ -498,6 +500,14 @@
 <ul class="nav pull-right scroll-top">
     <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
 </ul>
+
+<div id="test1" class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert"
+            aria-hidden="true">
+    &times;
+    </button>
+    Success! Well done its submitted.
+</div>
 
 <div class="modal" id="order-result" role="dialog">
     <div class="modal-dialog">

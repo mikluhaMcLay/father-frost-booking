@@ -7,8 +7,13 @@ $(document).ready(function () {
     pricetable.bootstrapTable({
         url: '/price',
         onClickRow: function (row) {
-            checkTimes(row);
-            //showTimes();
+            if (row.type == 'SINGLE_DAY' || row.type == 'INTERVAL') {
+                checkTimes(row);
+            } else {
+                var text = 'Стоимость Вашего заказа составит ' + row.price + '. Для уточнения наиболее удобных Вам ' +
+                    ' даты и времени с Вами свяжется наш менеджер в ближайшее время.';
+                goToOrder(text);
+            }
         }
     });
 
@@ -16,7 +21,8 @@ $(document).ready(function () {
         $.ajax('/order/times', {
             type: 'GET',
             data: {
-                interval: rowDay.interval
+                interval: rowDay.interval,
+                type: rowDay.type
             },
             success: function (data, textStatus, jqXHR) {
                 console.log("times = " + data.times);
@@ -54,13 +60,15 @@ $(document).ready(function () {
                     var dateAndPrice = getDateAndPrice();
                     text = 'Какой-то текст про заказ на ' + dateAndPrice.datetime +
                     '. Стоимость заказа ' + dateAndPrice.price;
-                    window.location = "#section5";
-                } else {
-                    text = 'Чтобы оформить заказ самостоятельно, Вам нужно выбрать дату и время.';
+                    goToOrder(text);
                 }
-                $('#order-description').text(text);
             }
         });
+    }
+
+    function goToOrder(text){
+        $('#order-description').text(text);
+        window.location = "#section5";
     }
 
 
@@ -92,8 +100,7 @@ $(document).ready(function () {
         var ages = agesInput.val();
         var comment = commentInput.val();
         var price = dateAndPrice.price.split(' ')[0];
-        i++;
-        console.log('i='+i);
+        var bookPeriod = pricetable.bootstrapTable('getSelections')[0].interval
 
         $.post('/order/save', {
             name: name,
@@ -102,30 +109,60 @@ $(document).ready(function () {
             childrenAges: ages,
             comment: comment,
             bookDate: dateAndPrice.datetime,
-            price: price
-        })
+            price: price,
+            bookPeriod: bookPeriod
+        });
 
         return false;
     });
 
-    var nameInput = $('input[name=name]');
-    var phoneInput = $('input[name=phone]');
-    var addressInput = $('input[name=address]');
-    var agesInput = $('input[name=ages]');
-    var commentInput = $('textarea[name=comment]');
+    $('#callback-order').click(function(e) {
+        e.stopImmediatePropagation();
+
+        var name = callbackNameInput.val();
+        var phone = callbackPhoneInput.val();
+        var comment = callbackCommentInput.val();
+
+        $.post('/order/callback', {
+            name: name,
+            phone: phone,
+            comment: comment
+        },function(data){
+
+        })
+    });
+
+    var nameInput = $('#self-order-div input[name=name]');
+    var phoneInput = $('#self-order-div input[name=phone]');
+    var addressInput = $('#self-order-div input[name=address]');
+    var agesInput = $('#self-order-div input[name=ages]');
+    var commentInput = $('#self-order-div textarea[name=comment]');
+
+    var callbackNameInput = $('#back-call-div input[name=name]');
+    var callbackPhoneInput = $('#back-call-div input[name=phone]');
+    var callbackCommentInput = $('#back-call-div textarea[name=comment]');
+
 
     function getDateAndPrice() {
         var timepicker = $('#datetimepicker');
         var time = timepicker.val();
 
+        var datetime
         var selected = pricetable.bootstrapTable('getSelections');
         selected = selected[0];
-        var splitted = selected.interval.split(' ');
-        var date = splitted[0] + ' ' + splitted[1];
+
+        if (selected.type == 'SINGLE_DAY' || selected.type == 'INTERVAL') {
+            var splitted = selected.interval.split(' ');
+            var date = splitted[0] + ' ' + splitted[1];
+            datetime = date + ' ' + time;
+        }else{
+            datetime = null;
+        }
+
         var price = selected.price;
 
         return {
-            datetime: date + ' ' + time,
+            datetime: datetime,
             price: price
         };
     }

@@ -5,113 +5,55 @@ import java.text.SimpleDateFormat
 
 class BootStrap {
 
+    def dayFormat = new SimpleDateFormat('dd MMMMM', new Locale('ru', 'RU'))
+    def shortDayFormat = new SimpleDateFormat('dd MMM', new Locale('ru', 'RU'))
+    def hourFormat = new SimpleDateFormat( 'HH:mm' )
+
     def init = { servletContext ->
         def DATE_FORMAT = 'yyyy/MM/dd HH'
 //        def dateFormatter = DateFormat.getDateInstance( DateFormat.MEDIUM, new Locale( 'ru', 'RU' ) )
-        def dayFormat = new SimpleDateFormat('dd MMMMM', new Locale('ru', 'RU'))
-        def hourFormat = new SimpleDateFormat( 'HH:mm' )
-//
-//        try {
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/27 12' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/27 18' ),
-//                    price: 5000
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/27 18' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/27 22' ),
-//                    price: 5500
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/28 08' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/28 18' ),
-//                    price: 6000
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/26 10' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/28 22' ),
-//                    price: 4000
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/25 10' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/25 22' ),
-//                    price: 4000
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/29 10' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/29 22' ),
-//                    price: 6500
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/30 10' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/30 22' ),
-//                    price: 6500
-//            ).insert()
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 08' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 15' ),
-//                    price: 6500
-//            ).insert()
-//
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 15' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 17' ),
-//                    price: 6700
-//            ).insert()
-//
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 17' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 19' ),
-//                    price: 7000
-//            ).insert()
-//
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 19' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 21' ),
-//                    price: 8000
-//            ).insert()
-//
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 21' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 22' ),
-//                    price: 8500
-//            ).insert()
-//
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 22' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 23' ),
-//                    price: 9400
-//            ).insert()
-//
-//
-//            new Price(
-//                    from: Date.parse( DATE_FORMAT, '2014/12/31 23' ),
-//                    to: Date.parse( DATE_FORMAT, '2014/12/31 24' ),
-//                    price: 10000
-//            ).insert()
-//        } catch ( Throwable error ) {
-//            log.warn( "Not saved on startup cause: $error   " )
-//        }
-
 
         JSON.registerObjectMarshaller( Price ) {
             def map = [ : ]
-            map[ 'interval' ] = "${dayFormat.format( it.from )} ${hourFormat.format( it.from )} — ${hourFormat.format( it.to )}"
+            map[ 'interval' ] = intervalToString( it.from, it.to )
             map[ 'price' ] = it.price + ' ' + '\u20BD'
+            map[ 'type' ] = it.type
             return map
         }
+    }
+
+    def intervalToString(from, to) {
+        def interval
+        def intervalInDays = to != null ? (from..to).size() : 0
+
+        if ( to == null ) {
+            // если to не определена, то это последний интервал
+            interval = "с ${dayFormat.format( from )}"
+        }else if ( intervalInDays > 15 ) {
+            //если интервал больше 15 дней, то это самый ранний интервал у нас
+            interval = "до ${ dayFormat.format( to ) }"
+        }else if ( isSameDay( from, to ) ) {
+            //тогда показываем один день
+            if ( to.getTime() - from.getTime() > 20 * 60 * 60 * 1000L) {
+                //если больше 20 часов, то показываем только день, без времени
+                interval = dayFormat.format( from );//to & from — это один день — пофиг, какой показывать
+            }else {
+                interval = "${ dayFormat.format( from ) } ${ hourFormat.format( from ) } — ${ hourFormat.format( to ) }"
+            }
+        } else {
+            //пусть если интервал меньше суток, то показываем часы (случай 31 дек — 1 янв); если больше суток, то дни
+            if ( intervalInDays > 1 ) {
+                interval = "${ dayFormat.format( from ) } — ${ dayFormat.format( to ) }"
+            }else{
+                interval = "${shortDayFormat.format( from )} ${hourFormat.format( from )} — ${shortDayFormat.format( to )} ${ hourFormat.format( to ) }"
+            }
+        }
+
+        interval
+    }
+
+    def isSameDay( firstDate, secondDate ) {
+        dayFormat.format( firstDate ) == dayFormat.format( secondDate )
     }
     def destroy = {
     }
