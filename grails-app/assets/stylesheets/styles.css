@@ -79,7 +79,7 @@ img.our-logo{
     min-width: inherit;
     position: absolute;
     /*top: 0px;*/
-    left: 40%;
+    left: 50%;
     margin: 0 -50% 0 0;
     transform: translate(-50%);
     max-width: 285px;
@@ -314,8 +314,13 @@ td.bs-checkbox{
     h1 {
         font-size:30px;
     }
-    .promo-header{
+    p.promo-header{
         font-size:20px;
+    }
+
+    #pricestable{
+        font-size: 12px;
+        line-height: 1.1;
     }
 }
 

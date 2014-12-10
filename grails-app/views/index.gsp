@@ -93,7 +93,7 @@
         <div class="divider"></div>
         <div class="container">
             <div class="our-text col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3" style="height: 100%;">
-                <p class="lead text-center" style="text-shadow: 0 1px 2px rgba(0,0,0,0.6); font-size: 30px">
+                <p class="lead text-center our-text promo-header" >
                     Закажите новогодний праздник для своего ребенка!
                 </p>
                 <p class="lead text-center" >
@@ -424,7 +424,7 @@
             <div class="col-md-offset-4">
                 <div class="order-input row">
                     <p class="col-md-6" id="order-description">
-                        Чтобы оформить заказ самостоятельно, Вам нужно выбрать дату и время.
+                        Чтобы оформить заказ самостоятельно, Вам нужно <a href="#section4">выбрать дату и время.</a>
                     </p>
                 </div>
 
