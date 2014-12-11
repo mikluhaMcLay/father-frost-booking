@@ -18,37 +18,9 @@
     <asset:javascript src="application.js"/>
     <asset:javascript src="bootstrap-table.min.js"/>
     <asset:javascript src="jquery.datetimepicker.js"/>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        function readCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for(var i=0;i < ca.length;i++) {
-                var c = ca[i];
-                while (c.charAt(0)==' ') c = c.substring(1,c.length);
-                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-            }
-            return null;
-        }
-
-        ga('create', 'UA-57493886-1', 'auto');
-        ga('send', 'pageview');
-
-//        var userId = readCookie('ffbookingUserId');
-//        debugger;
-//        if (!userId) {
-//            userId = Math.floor((1 + Math.random()) * 0x100000000).toString(16);
-//            document.cookie = 'ffbookingUserId=' + userId + '; expires=Fri, 3 Feb 2015 20:47:11 UTC; path=/';
-//        }
-//
-//        ga(‘set’, ‘&uid’, {{userId}}); // Задание идентификатора пользователя с помощью параметра user_id (текущий пользователь).
-
-    </script>
+    %{--<asset:javascript src="google-analytics.js"/>--}%
+    <ga:trackPageview />
+    <ua:trackPageview />
 </head>
 
 <body>
@@ -83,7 +55,7 @@
 
     <div class="container" style="position:inherit;height: 285px;width: 100%">
         <img src="${assetPath( src: 'DedMorozExists-white.png' )}" class="our-logo"
-             style="max-width: 285px; max-height: 285px">
+             style="max-width: 285px; max-height: 285px;">
         <div class="col-sm-10 col-sm-offset-1">
 
         </div>

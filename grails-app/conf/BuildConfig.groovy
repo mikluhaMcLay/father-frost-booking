@@ -68,6 +68,8 @@ grails.project.dependency.resolution = {
         runtime ':twitter-bootstrap:3.2.0.2'
         runtime ":mongodb:3.0.2"
 
+        compile ":google-analytics:2.3.3"
+
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"

@@ -82,6 +82,8 @@ img.our-logo{
     left: 50%;
     margin: 0 -50% 0 0;
     transform: translate(-50%);
+    -webkit-transform:translate(-50%);
+    -ms-transform:translate(-50%);
     max-width: 285px;
     max-height: 285px;
     display: block;
@@ -212,7 +214,6 @@ header .dropdown-menu {
   color:#222;
 }
 
-
 section {
   color: #ffffff;
   min-height: 400px;
@@ -322,6 +323,11 @@ td.bs-checkbox{
         font-size: 12px;
         line-height: 1.1;
     }
+
+    ul.scroll-top{
+        height: 12px;
+        width: 12px;
+    }
 }
 
 @media screen and (min-width:800px){
@@ -366,4 +372,12 @@ td.bs-checkbox{
 /*ячейка выбора времени при наведении курсора*/
 .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box >div >div:hover{
     background:#073045 !important;
+}
+
+a{
+    color: #cac627;
+}
+
+a:hover, a:focus{
+    color: #000;
 }

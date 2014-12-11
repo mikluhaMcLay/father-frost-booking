@@ -121,3 +121,5 @@ log4j.main = {
 
 
 grails.databinding.dateFormats = ["dd.MM.yyyy hh:mm a"]
+
+google.analytics.webPropertyID = "UA-57493886-1"
