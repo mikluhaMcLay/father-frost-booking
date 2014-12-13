@@ -25,11 +25,12 @@ $(document).ready(function () {
                 type: rowDay.type
             },
             success: function (data, textStatus, jqXHR) {
-                console.log("times = " + data.times);
+                var times = data.times;
+                console.log("times = " + times);
 
-                createTimePicker(data.times);
+                createTimePicker(times);
 
-                var height = Math.min(data.times.length * 25, pricetable.height() - 45)
+                var height = Math.min(times.length * 25, pricetable.height() - 45)
                 height = Math.min(height, 495 - 45);
 
                 $('.xdsoft_time_box').height(height);

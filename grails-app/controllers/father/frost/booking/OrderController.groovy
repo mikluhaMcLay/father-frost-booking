@@ -89,7 +89,7 @@ class OrderController extends RestfulController {
     def getFromAndTo( params ) {
         def hourTo, hourFrom
         def dateFormat = new SimpleDateFormat( 'HH:mm' )
-
+        def isToOnNextDay = false//на случай, когда дата "до" принадлежит следующим суткам (например, 1 января)
         if ( params.type == 'INTERVAL' ) {
             def intervalRequest = params.interval
             def splited = intervalRequest.split( '(-)|(—)' )
@@ -99,6 +99,7 @@ class OrderController extends RestfulController {
             def splitedToDate = hourTo.split( ' ' )
             if ( splitedToDate.size() > 1 ) {
                 hourTo = splitedToDate[ 2 ].trim()
+                isToOnNextDay = true
             }
             hourFrom = splited[ 0 ].split( ' ' )[ 2 ].trim()
         } else {
@@ -107,7 +108,11 @@ class OrderController extends RestfulController {
         }
         def dateFrom = dateFormat.parse( hourFrom )
         def dateTo = dateFormat.parse( hourTo )
-
+        if ( isToOnNextDay ) {
+            use(TimeCategory){
+                dateTo = dateTo + 1.day
+            }
+        }
         return [ dateFrom, dateTo ]
     }
 

@@ -16,7 +16,7 @@ class BootStrap {
         JSON.registerObjectMarshaller( Price ) {
             def map = [ : ]
             map[ 'interval' ] = intervalToString( it.from, it.to )
-            map[ 'price' ] = it.price + ' ' + '\u20BD'
+            map[ 'price' ] = it.price
             map[ 'type' ] = it.type
             return map
         }

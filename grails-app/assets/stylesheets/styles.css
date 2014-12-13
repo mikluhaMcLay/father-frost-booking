@@ -223,7 +223,7 @@ section {
 }
 
 .bg-1 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;
+	background: url('../images/new_year_christmas_celebration.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -231,7 +231,7 @@ section {
 }
 
 .bg-2 {
-	background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed;
+	background: url('../images/new_year_christmas_celebration.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -239,7 +239,7 @@ section {
 }
 
 .bg-3 {
-	background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed;
+	background: url('../images/new_year_ded_moroz.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -325,8 +325,8 @@ td.bs-checkbox{
     }
 
     ul.scroll-top{
-        height: 12px;
-        width: 12px;
+        height: 16px;
+        width: 16px;
     }
 }
 
