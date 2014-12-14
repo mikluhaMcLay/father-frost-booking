@@ -6,6 +6,8 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
+//= require notify.min.js
+//= require notify-bootstrap.js
 //= require_tree .
 //= require_self
 

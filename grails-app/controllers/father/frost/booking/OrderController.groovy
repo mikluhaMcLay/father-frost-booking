@@ -49,15 +49,22 @@ class OrderController extends RestfulController {
         log.debug "Going to save callback: ${ callback }"
         log.info "Callback saved: ${ callbackSaved }"
 
+        def saved
         if ( isOrder ) {
             def order = new Order( orderParams )
             log.debug "Order: ${ order }"
 
-            def saved = order.save()
+            saved = order.save()
             log.info "Order saved: ${ saved }"
         }
 
-        render( success: true ) as JSON
+        def error = saved == null && callbackSaved == null
+        if ( error ) {
+            response.status = 400
+        }
+        (error
+                ? render( success: false, error: 'Cannot save callback request' )
+                : render( success: true )) as JSON
     }
 
     def times() {
@@ -83,7 +90,11 @@ class OrderController extends RestfulController {
         def saved = callback.save()
         log.info( "Callback saved: $saved" )
 
-        render( success: true ) as JSON
+        def error = saved == null
+        if ( error ) {
+            response.status = 400
+        }
+        (error ? render( success: false, error: 'Cannot save callback request' ) : render( success: true )) as JSON
     }
 
     def getFromAndTo( params ) {
@@ -109,7 +120,7 @@ class OrderController extends RestfulController {
         def dateFrom = dateFormat.parse( hourFrom )
         def dateTo = dateFormat.parse( hourTo )
         if ( isToOnNextDay ) {
-            use(TimeCategory){
+            use( TimeCategory ) {
                 dateTo = dateTo + 1.day
             }
         }

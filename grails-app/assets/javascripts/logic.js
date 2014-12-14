@@ -100,18 +100,28 @@ $(document).ready(function () {
         var address = addressInput.val();
         var ages = agesInput.val();
         var comment = commentInput.val();
-        var price = dateAndPrice.price.split(' ')[0];
+        var price = dateAndPrice.price;
         var bookPeriod = pricetable.bootstrapTable('getSelections')[0].interval
 
-        $.post('/order/save', {
-            name: name,
-            phone: phone,
-            address: address,
-            childrenAges: ages,
-            comment: comment,
-            bookDate: dateAndPrice.datetime,
-            price: price,
-            bookPeriod: bookPeriod
+        $.ajax({
+            url: '/order/save',
+            type: 'POST',
+            data: {
+                name: name,
+                phone: phone,
+                address: address,
+                childrenAges: ages,
+                comment: comment,
+                bookDate: dateAndPrice.datetime,
+                price: price,
+                bookPeriod: bookPeriod
+            },
+            success: function (data) {
+                $.notify('Ваш заказ принят. \nМы свяжемся с Вами в ближайшее время', 'success');
+            },
+            error: function (data) {
+                $.notify('К сожалению, мы не смогли обработать Ваш заказ. Проверьте правильность заполнения.', 'error');
+            }
         });
 
         return false;
@@ -124,13 +134,22 @@ $(document).ready(function () {
         var phone = callbackPhoneInput.val();
         var comment = callbackCommentInput.val();
 
-        $.post('/order/callback', {
-            name: name,
-            phone: phone,
-            comment: comment
-        },function(data){
+        $.ajax({
+            url: '/order/callback',
+            type:'POST',
+            data: {
+                name: name,
+                phone: phone,
+                comment: comment
+            },
+            success:function(data){
+                $.notify('Мы перезвоним Вам в ближайшее время', 'success');
+            },
+            error:function(data){
+                $.notify('К сожалению, мы не смогли обработать Ваш запрос.\nПроверьте правильность заполнения.', 'error');
+            }
+        });
 
-        })
     });
 
     var nameInput = $('#self-order-div input[name=name]');
