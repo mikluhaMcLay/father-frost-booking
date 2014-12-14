@@ -59,8 +59,8 @@ $(document).ready(function () {
                 var text;
                 if ($input.val()) {
                     var dateAndPrice = getDateAndPrice();
-                    text = 'Какой-то текст про заказ на ' + dateAndPrice.datetime +
-                    '. Стоимость заказа ' + dateAndPrice.price;
+                    text = 'Дед Мороз придет к Вам в гости ' + dateAndPrice.datetime +
+                    '. Стоимость заказа составит ' + dateAndPrice.price + " рублей.";
                     goToOrder(text);
                 }
             }
