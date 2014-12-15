@@ -65,6 +65,10 @@
         <div class="divider"></div>
         <div class="container">
             <div class="our-text col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3" style="height: 100%;">
+                <p class="lead text-center our-text promo-header contacts" >
+                    Не верите? Проверьте: +79689102079
+                </p>
+
                 <p class="lead text-center our-text promo-header" >
                     Закажите новогодний праздник для своего ребенка!
                 </p>
@@ -382,7 +386,7 @@
 
             <div class="row form-group text-center">
                 <div class="col-md-12">
-                    <h1>Отправить заказ</h1>
+                    <h1>Отправьте заказ</h1>
                 </div>
             </div>
 
@@ -447,7 +451,7 @@
 
             <div class="row form-group text-center">
                 <div class="col-md-12">
-                    <h1>Обратный звонок</h1>
+                    <h1>Закажите обратный звонок</h1>
                 </div>
             </div>
 
@@ -480,6 +484,12 @@
 
         </div>
         </div>
+
+        <div class="col-sm-9 col-sm-offset-1 text-center our-text">
+            <p>или позвоните нам сами:</p>
+            <p class="contacts">+79689102079</p>
+            <p class="contacts">letter2dm@gmail.com</p>
+        </div>
     </div>
 
 </div><!--/wrap-->
@@ -495,14 +505,6 @@
 <ul class="nav pull-right scroll-top">
     <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
 </ul>
-
-<div id="test1" class="alert alert-success alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert"
-            aria-hidden="true">
-    &times;
-    </button>
-    Success! Well done its submitted.
-</div>
 
 <div class="modal" id="order-result" role="dialog">
     <div class="modal-dialog">

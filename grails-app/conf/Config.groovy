@@ -102,7 +102,7 @@ log4j.main = {
     // Example of changing the log pattern for the default console appender:
     //
     appenders {
-        console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+        console name:'stdout', layout:pattern(conversionPattern: '%d{ISO8601} %-5p (%t) [%c{1}(%M:%L)] %m%n')
     }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
@@ -112,7 +112,7 @@ log4j.main = {
            'org.codehaus.groovy.grails.plugins',            // plugins
            'org.springframework'
 
-    debug  'grails.app'
+    info  'grails.app'
 
     all    'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
            'org.codehaus.groovy.grails.web.mapping'        // URL mapping

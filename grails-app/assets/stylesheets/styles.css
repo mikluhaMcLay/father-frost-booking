@@ -323,11 +323,6 @@ td.bs-checkbox{
         font-size: 12px;
         line-height: 1.1;
     }
-
-    ul.scroll-top{
-        height: 16px;
-        width: 16px;
-    }
 }
 
 @media screen and (min-width:800px){
@@ -340,6 +335,10 @@ td.bs-checkbox{
     .promo-header{
         font-size:24px;
     }
+}
+
+.contacts{
+    font-weight: 600;
 }
 
 .vertical-center {
