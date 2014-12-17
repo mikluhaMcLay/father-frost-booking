@@ -112,9 +112,8 @@ log4j.main = {
            'org.codehaus.groovy.grails.plugins',            // plugins
            'org.springframework'
 
-    info  'grails.app'
-
-    all    'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+    info   'grails.app',
+           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
            'org.codehaus.groovy.grails.web.mapping'        // URL mapping
 
 }

@@ -42,12 +42,12 @@
 
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav nav-justified">
-                        <li><a href="#section1">Мы</a></li>
-                        <li><a href="#section2">Программы</a></li>
+                        <li><a href="#weare">Мы</a></li>
+                        <li><a href="#whatdowedo">Программы</a></li>
                         %{--<li><a href="#section3">фотки</a></li>--}%
-                        <li><a href="#section4">цены</a></li>
-                        <li><a href="#section4">заказать</a></li>
-                        <li><a href="#section6">контакты</a></li>
+                        <li><a href="#prices">цены</a></li>
+                        <li><a href="#prices">заказать</a></li>
+                        <li><a href="#contacts">контакты</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div><!--/.container -->
@@ -175,7 +175,7 @@
     <div class="divider"></div>
 
     <!-- Begin page content -->
-    <div class="divider" id="section1"></div>
+    <div class="divider" id="weare"></div>
 
     <div class="container">
         <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 our-text">
@@ -204,18 +204,23 @@
         <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 text-center"></div>
     </section>
 
-    <div class="divider" id="section2"></div>
+    <div class="divider" id="whatdowedo"></div>
 
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 text-center our-text">
-            <h1>Наша миссия</h1>
+        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3 our-text">
+            <div class="page-header text-center">
+                <h1>Что мы делаем</h1>
+            </div>
 
-            <hr>
+            <p class="promo-header">Мы приезжаем и дарим эмоции:</p>
 
-            <p>
-                Мы считаем, что всем нам не хватает немного чудес. Миссия компании "Дед мороз существует" — 
-                помочь детям поверить, что Дед Мороз существует.
-            </p>
+            <ul>
+                <li>к Вам домой</li>
+                <li>на школьный утренник</li>
+                <li>в детский сад</li>
+                <li>на корпоратив</li>
+                <li>в ресторан</li>
+            </ul>
 
             <hr>
 
@@ -335,7 +340,7 @@
         %{--</div><!--/container-->--}%
     %{--</div>--}%
 
-    <div class="divider" id="section4"></div>
+    <div class="divider" id="prices"></div>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center our-text">
@@ -393,7 +398,7 @@
             <div class="col-md-offset-4">
                 <div class="order-input row">
                     <p class="col-md-6" id="order-description">
-                        Чтобы оформить заказ самостоятельно, Вам нужно <a href="#section4">выбрать дату и время.</a>
+                        Чтобы оформить заказ самостоятельно, Вам нужно <a href="#prices">выбрать дату и время.</a>
                     </p>
                 </div>
 
@@ -441,7 +446,7 @@
     </div><!--/row-->
 
 %{--раздел с обратным звонком--}%
-    <div class="divider" id="section6"></div>
+    <div class="divider" id="contacts"></div>
 
     <div class="row">
 
